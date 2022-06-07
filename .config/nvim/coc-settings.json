@@ -1,5 +1,15 @@
 {
-	"suggest.enablePreselect": true,
-	"suggest.noselect": false
+    "suggest.enablePreselect": true,
+    "suggest.noselect": false,
+    "languageserver": {
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": [
+                "dockerfile"
+            ],
+            "args": [
+                "--stdio"
+            ]
+        }
+    }
 }
-
