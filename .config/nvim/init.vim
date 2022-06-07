@@ -1,9 +1,10 @@
 set number
 set relativenumber
+set wrap!
 noh
 
 call plug#begin()
-Plug 'tpope/vim-surround'
+Plug 'ur4ltz/surround.nvim'
 Plug 'christoomey/vim-system-copy'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
@@ -14,6 +15,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'ayu-theme/ayu-vim' " or other package manager
 call plug#end()
 
+lua require"surround".setup{mappings_style = "surround"}
 lua require'nvim-tree'.setup {}
 
 set termguicolors     " enable true colors support
