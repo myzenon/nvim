@@ -21,6 +21,7 @@ Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ciaranm/detectindent'
 Plug 'tpope/vim-repeat'
+Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'pangloss/vim-javascript'
 " Plug 'elzr/vim-json'
 call plug#end()
