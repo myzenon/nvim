@@ -5,7 +5,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-noh
+set autoindent
+set hlsearch!
 
 call plug#begin()
 Plug 'ur4ltz/surround.nvim'
@@ -35,11 +36,24 @@ colorscheme ayu
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
+""""""" Coc
+" Keys
+nnoremap <C-f> :CocCommand formatJson --indent=4<CR>
+
 """"""" Nvim-Tree
 " Keys
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-q>     :tabclose<CR>
+
+" inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+" inoremap <C-tab>   <Esc>:tabnext<CR>i
+" inoremap <C-t>     <Esc>:tabnew<CR>
+" inoremap <C-S-w>   <Esc>:tabclose<CR>
 " More available functions:
 " NvimTreeOpen
 " NvimTreeClose
