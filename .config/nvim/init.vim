@@ -17,22 +17,39 @@ Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'ayu-theme/ayu-vim' " or other package manager
+" Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ciaranm/detectindent'
 Plug 'tpope/vim-repeat'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
 " Plug 'pangloss/vim-javascript'
 " Plug 'elzr/vim-json'
+" Plug 'kyoz/purify', { 'rtp': 'vim' }
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
-lua require'nvim-tree'.setup {}
+lua require'nvim-tree'.setup {
+        \ open_on_tab = true,
+      \ }
 
 """""""" Ayu-Vim
-set termguicolors     " enable true colors support
-let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+" set termguicolors     " enable true colors support
+" let ayucolor="mirage" " for mirage version of theme
+" colorscheme ayu
+
+let g:palenight_color_overrides = {
+    \ "gutter_fg_grey": { "gui": "#C2A410", "cterm": "100", "cterm16": "24" },
+\}
+set background=dark
+colorscheme palenight
+" syntax on " This is required
+" colorscheme purify
+noremap <S-G> :FufFile<CR>
+noremap <S-f> :FufBuffer<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 """""""" Vim-Indent-Guides
 " hi IndentGuidesOdd  ctermbg=black
@@ -41,7 +58,7 @@ autocmd VimEnter * :IndentGuidesEnable
 
 """"""" Coc
 " Keys
-nnoremap <C-f> :CocCommand formatJson --indent=4<CR>
+nnoremap <C-S-F> :CocCommand formatJson --indent=4<CR>
 
 """"""" Nvim-Tree
 " Keys
