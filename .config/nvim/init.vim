@@ -25,6 +25,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
+Plug 'kjwon15/vim-transparent'
 " Plug 'pangloss/vim-javascript'
 " Plug 'elzr/vim-json'
 " Plug 'kyoz/purify', { 'rtp': 'vim' }
@@ -47,8 +48,8 @@ set background=dark
 colorscheme palenight
 " syntax on " This is required
 " colorscheme purify
-noremap <S-G> :FufFile<CR>
-noremap <S-f> :FufBuffer<CR>
+noremap <C-[> :FufFile<CR>
+noremap <C-]> :FufBuffer<CR>
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 """""""" Vim-Indent-Guides
