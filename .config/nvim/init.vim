@@ -30,7 +30,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'feline-nvim/feline.nvim'
 Plug 'gioele/vim-autoswap'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
