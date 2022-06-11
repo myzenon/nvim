@@ -7,6 +7,9 @@ set softtabstop=4
 set expandtab
 set autoindent
 set hlsearch!
+set ignorecase
+set smartcase
+set termguicolors
 
 call plug#begin()
 Plug 'ur4ltz/surround.nvim'
@@ -17,39 +20,82 @@ Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ciaranm/detectindent'
 Plug 'tpope/vim-repeat'
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/FuzzyFinder'
 Plug 'kjwon15/vim-transparent'
-" Plug 'pangloss/vim-javascript'
-" Plug 'elzr/vim-json'
-" Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'feline-nvim/feline.nvim'
+" Plug 'ayu-theme/ayu-vim' " or other package manager
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <C-o> <cmd>Telescope live_grep<CR>
+nnoremap <C-]> <cmd>Telescope buffers<CR><ESC>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+
 lua require"surround".setup{mappings_style = "surround"}
-lua require'nvim-tree'.setup {
-        \ open_on_tab = true,
-      \ }
+lua << EOF
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
+local list_binds = {
+    { key = "t", action = "tabnew" },
+}
+
+require'nvim-tree'.setup {
+    git = {
+        ignore = false,
+    },
+	view = {
+		width = 40,
+		auto_resize = true,
+		mappings = {
+    		list = list_binds,
+    	},
+	},
+    filters = {
+    	dotfiles = false,
+		custom = {
+		    '.git',
+		    'node_modules',
+		    '.cache',
+		    '*.o',
+		}
+    },
+    update_cwd = true,
+    update_focused_file = {
+    	enable = true,
+    	update_cwd = true,
+    },
+	trash = {
+		cmd = "trash",
+        require_confirm = true,
+	},
+}
+EOF
+let g:nvim_tree_quit_on_open = 1
 
 """""""" Ayu-Vim
 " set termguicolors     " enable true colors support
 " let ayucolor="mirage" " for mirage version of theme
 " colorscheme ayu
 
-let g:palenight_color_overrides = {
-    \ "gutter_fg_grey": { "gui": "#C2A410", "cterm": "100", "cterm16": "24" },
-\}
-set background=dark
-colorscheme palenight
+colorscheme nord
+" let g:palenight_color_overrides = {
+"     \ "gutter_fg_grey": { "gui": "#C2A410", "cterm": "100", "cterm16": "24" },
+" \}
+" set background=dark
+" colorscheme palenight
 " syntax on " This is required
 " colorscheme purify
-noremap <C-[> :FufFile<CR>
-noremap <C-]> :FufBuffer<CR>
+" noremap <C-P> :FufFile<CR>
+" noremap <C-]> :FufBuffer<CR>
+lua require"feline".setup{}
+" colorscheme tokyonight
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 """""""" Vim-Indent-Guides
@@ -67,7 +113,7 @@ nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l>   :tabnext<CR>
+nnoremap <Tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <C-q>     :tabclose<CR>
 
@@ -84,7 +130,7 @@ nnoremap <C-q>     :tabclose<CR>
 " NvimTreeCollapse
 " NvimTreeCollapseKeepBuffers
 
-set termguicolors " this variable must be enabled for colors to be applied properly
+" set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 " highlight NvimTreeFolderIcon guibg=blue

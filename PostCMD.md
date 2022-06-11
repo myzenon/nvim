@@ -7,3 +7,9 @@
 ```
 yarn global add dockerfile-language-server-nodejs
 ```
+
+## RipGrep
+[Installation Page](https://github.com/BurntSushi/ripgrep#installation)
+```
+brew install ripgrep
+```
