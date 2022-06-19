@@ -30,17 +30,29 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'feline-nvim/feline.nvim'
 Plug 'gioele/vim-autoswap'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'cohama/lexima.vim'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+lua require"surround".setup{mappings_style = "surround"}
+
+" TeleScope
 nnoremap <C-p> <cmd>Telescope find_files<CR>
 nnoremap <C-o> <cmd>Telescope live_grep<CR>
 nnoremap <C-]> <cmd>Telescope buffers<CR><ESC>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+lua << EOF
+require('telescope').setup{
+    defaults = {
+        initial_mode = "normal"
+    },
+}
+EOF
 
-lua require"surround".setup{mappings_style = "surround"}
+" NivmTree
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
@@ -90,12 +102,14 @@ local list_binds = {
 }
 
 require'nvim-tree'.setup {
+    create_in_closed_folder = true,
+    open_on_tab = false,
     git = {
         ignore = false,
     },
 	view = {
-		width = 40,
-		auto_resize = true,
+        number = true,
+        relativenumber = true,
 		mappings = {
     		list = list_binds,
             custom_only = true,
@@ -104,6 +118,7 @@ require'nvim-tree'.setup {
     filters = {
     	dotfiles = false,
 		custom = {
+            '.DS_Store',
 		    '.git',
 		    'node_modules',
 		    '.cache',
@@ -115,13 +130,18 @@ require'nvim-tree'.setup {
     	enable = true,
     	update_cwd = true,
     },
+    actions = {
+        open_file = {
+            quit_on_open = false,
+            resize_window = false,
+        },
+    },
 	trash = {
 		cmd = "trash",
         require_confirm = true,
 	},
 }
 EOF
-let g:nvim_tree_quit_on_open = 1
 
 """""""" Ayu-Vim
 " set termguicolors     " enable true colors support
@@ -157,9 +177,11 @@ nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 nnoremap <C-h> :tabprevious<CR>
-nnoremap <Tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-q>     :tabclose<CR>
+nnoremap <Tab> :tabnext<CR>
+nnoremap <C-t> :tabnew<CR>
+" nnoremap <C-t> :tabnew \| :NvimTreeOpen<CR>
+nnoremap <C-q> :tabclose<CR>
+nnoremap <silent>ff 1gt<CR>
 
 " inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 " inoremap <C-tab>   <Esc>:tabnext<CR>i
