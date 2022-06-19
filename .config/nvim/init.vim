@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'kjwon15/vim-transparent'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'feline-nvim/feline.nvim'
+" Plug 'feline-nvim/feline.nvim'
 Plug 'gioele/vim-autoswap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -35,6 +35,8 @@ Plug 'cohama/lexima.vim'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
@@ -143,23 +145,8 @@ require'nvim-tree'.setup {
 }
 EOF
 
-"""""""" Ayu-Vim
-" set termguicolors     " enable true colors support
-" let ayucolor="mirage" " for mirage version of theme
-" colorscheme ayu
-
 colorscheme nord
-" let g:palenight_color_overrides = {
-"     \ "gutter_fg_grey": { "gui": "#C2A410", "cterm": "100", "cterm16": "24" },
-" \}
-" set background=dark
-" colorscheme palenight
-" syntax on " This is required
-" colorscheme purify
-" noremap <C-P> :FufFile<CR>
-" noremap <C-]> :FufBuffer<CR>
-lua require"feline".setup{}
-" colorscheme tokyonight
+" lua require"feline".setup{}
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 """""""" Vim-Indent-Guides
