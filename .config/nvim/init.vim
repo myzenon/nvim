@@ -32,6 +32,10 @@ Plug 'gioele/vim-autoswap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'cohama/lexima.vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'mkitt/tabline.vim'
+Plug 'kassio/neoterm'
+Plug 'justinmk/vim-gtfo'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
@@ -40,6 +44,10 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
+
+" Terminal
+tnoremap <Esc> <C-\><C-n>
+nnoremap <C-z> :FloatermToggle<CR>
 
 " TeleScope
 nnoremap <C-p> <cmd>Telescope find_files<CR>
