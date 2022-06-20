@@ -100,8 +100,8 @@ local list_binds = {
     { key = "]c",                             action = "next_git_item" },
     { key = "-",                              action = "dir_up" },
     { key = "s",                              action = "system_open" },
-    { key = "f",                              action = "live_filter" },
-    { key = "F",                              action = "clear_live_filter" },
+    { key = "<C-f>",                          action = "live_filter" },
+    { key = "<C-F>",                          action = "clear_live_filter" },
     { key = "q",                              action = "close" },
     { key = "W",                              action = "collapse_all" },
     { key = "E",                              action = "expand_all" },
@@ -176,7 +176,7 @@ nnoremap <Tab> :tabnext<CR>
 nnoremap <C-t> :tabnew<CR>
 " nnoremap <C-t> :tabnew \| :NvimTreeOpen<CR>
 nnoremap <C-q> :tabclose<CR>
-nnoremap <silent>ff 1gt<CR>
+nnoremap <silent>ff 1gt \| :NvimTreeRefresh<CR>
 
 " inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 " inoremap <C-tab>   <Esc>:tabnext<CR>i
