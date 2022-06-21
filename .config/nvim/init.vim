@@ -10,6 +10,7 @@ set hlsearch!
 set ignorecase
 set smartcase
 set termguicolors
+set splitright
 
 call plug#begin()
 Plug 'ur4ltz/surround.nvim'
