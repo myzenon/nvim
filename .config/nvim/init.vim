@@ -37,6 +37,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mkitt/tabline.vim'
 Plug 'kassio/neoterm'
 Plug 'justinmk/vim-gtfo'
+Plug 'matze/vim-move'
+Plug 'github/copilot.vim'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
@@ -46,6 +48,7 @@ call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
 
+let g:move_key_modifier = 'C'
 " Terminal
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-z> :FloatermToggle<CR>
