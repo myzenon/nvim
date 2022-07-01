@@ -39,6 +39,7 @@ Plug 'kassio/neoterm'
 Plug 'justinmk/vim-gtfo'
 Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
@@ -58,6 +59,11 @@ nnoremap <C-p> <cmd>Telescope find_files<CR>
 nnoremap <C-\> <cmd>Telescope live_grep<CR>
 nnoremap <C-]> <cmd>Telescope buffers<CR><ESC>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+
+" Copilot
+imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 lua << EOF
 require('telescope').setup{
     defaults = {
@@ -157,6 +163,10 @@ require'nvim-tree'.setup {
 }
 EOF
 
+" let g:aqua_transparency = 1
+" let g:airline_theme="base16_aquarium_dark"
+" let g:aquarium_style="dark"
+" colorscheme aquarium
 colorscheme nord
 " lua require"feline".setup{}
 nnoremap <silent> K :call ShowDocumentation()<CR>
@@ -176,7 +186,8 @@ nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 nnoremap <C-h> :tabprevious<CR>
-nnoremap <Tab> :tabnext<CR>
+nnoremap <Tab><Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
 nnoremap <C-t> :tabnew<CR>
 " nnoremap <C-t> :tabnew \| :NvimTreeOpen<CR>
 nnoremap <C-q> :tabclose<CR>
