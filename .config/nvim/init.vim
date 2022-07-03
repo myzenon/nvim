@@ -40,6 +40,7 @@ Plug 'justinmk/vim-gtfo'
 Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'drzel/vim-gui-zoom'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
@@ -48,8 +49,9 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
-
+" Vim Move
 let g:move_key_modifier = 'C'
+let g:move_key_modifier_visualmode = 'C'
 " Terminal
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-z> :FloatermToggle<CR>
@@ -64,6 +66,33 @@ nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" NeoVide
+set guifont=MesloLGS\ NF:h16
+let g:neovide_transparency=0.9
+let g:neovide_floating_blur_amount_x = 2.0
+let g:neovide_floating_blur_amount_y = 2.0
+let g:neovide_touch_deadzone=60.0
+let g:neovide_touch_drag_timeout=0.17
+let g:neovide_input_use_logo=v:true
+let g:neovide_input_macos_alt_is_meta=v:false
+set mouse=a
+nmap <c-+> :ZoomIn<CR>
+nmap <c--> :ZoomOut<CR>
+" set clipboard=unnamedplus
+" nmap <c-c> "+y
+" vmap <c-c> "+y
+" nmap <c-v> "+p
+" " inoremap <c-v> <c-r>+
+" cnoremap <c-v> <c-r>+
+inoremap <D-v> <c-r>+
+cnoremap <D-v> <c-r>+
+" inoremap <M-v> <M-r>+
+" cnoremap <M-v> <M-r>+
+" use <c-r> to insert original character without triggering things like auto-pairs
+" inoremap <c-r> <c-v>
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 lua << EOF
 require('telescope').setup{
     defaults = {
