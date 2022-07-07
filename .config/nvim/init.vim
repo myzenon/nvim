@@ -41,6 +41,10 @@ Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'drzel/vim-gui-zoom'
+Plug 'kana/vim-smartword'
+Plug 'bkad/camelcasemotion'
+Plug 'easymotion/vim-easymotion'
+" Plug 'chaoren/vim-wordmotion'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'
@@ -49,6 +53,7 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
+
 " Vim Move
 let g:move_key_modifier = 'C'
 let g:move_key_modifier_visualmode = 'C'
@@ -62,13 +67,28 @@ nnoremap <C-\> <cmd>Telescope live_grep<CR>
 nnoremap <C-]> <cmd>Telescope buffers<CR><ESC>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
+" Vim CamelCaseMotion
+let g:camelcasemotion_key = '<leader>'
+
+" Vim EasyMotion
+" " Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
 " Copilot
 imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 " NeoVide
 set guifont=MesloLGS\ NF:h16
-let g:neovide_transparency=0.9
+let g:neovide_transparency=0.8
+let g:neovide_scroll_animation_length = 0.1
 let g:neovide_floating_blur_amount_x = 2.0
 let g:neovide_floating_blur_amount_y = 2.0
 let g:neovide_touch_deadzone=60.0
@@ -208,6 +228,10 @@ autocmd VimEnter * :IndentGuidesEnable
 """"""" Coc
 " Keys
 nnoremap <C-S-F> :CocCommand formatJson --indent=4<CR>
+nnoremap <C-S-V> :CocCommand volar.action.splitEditors<CR>
+nnoremap <C-S-v> :CocCommand volar.action.splitEditors<CR>
+nnoremap <C-S-N> :CocCommand volar.action.nuxt<CR>
+nnoremap <C-S-n> :CocCommand volar.action.nuxt<CR>
 
 """"""" Nvim-Tree
 " Keys

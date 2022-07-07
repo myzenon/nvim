@@ -15,3 +15,5 @@ brew install ripgrep
 ```
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+## COC Volar
+brew install watchman
