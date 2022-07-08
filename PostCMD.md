@@ -1,6 +1,6 @@
 ## COC
 ```
-:CocInstall coc-json coc-tsserver coc-eslint coc-format-json coc-html coc-css @yaegassy/coc-volar @yaegassy/coc-volar-tools
+:CocInstall coc-json coc-tsserver coc-eslint coc-format-json coc-html coc-css @yaegassy/coc-volar @yaegassy/coc-volar-tools coc-rust-analyzer
 ```
 
 ## Node Modules
