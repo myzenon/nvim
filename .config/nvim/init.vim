@@ -44,6 +44,10 @@ Plug 'drzel/vim-gui-zoom'
 Plug 'kana/vim-smartword'
 Plug 'bkad/camelcasemotion'
 Plug 'easymotion/vim-easymotion'
+Plug 'kamykn/spelunker.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'timonv/vim-cargo'
 " Plug 'chaoren/vim-wordmotion'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -121,7 +125,7 @@ require('telescope').setup{
 }
 EOF
 
-" NivmTree
+" NvimTree
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
@@ -228,10 +232,13 @@ autocmd VimEnter * :IndentGuidesEnable
 """"""" Coc
 " Keys
 nnoremap <C-S-F> :CocCommand formatJson --indent=4<CR>
+" nnoremap <C-F> :CocCommand formatJson --indent=4<CR>
 nnoremap <C-S-V> :CocCommand volar.action.splitEditors<CR>
-nnoremap <C-S-v> :CocCommand volar.action.splitEditors<CR>
+" nnoremap <C-V> :CocCommand volar.action.splitEditors<CR>
 nnoremap <C-S-N> :CocCommand volar.action.nuxt<CR>
-nnoremap <C-S-n> :CocCommand volar.action.nuxt<CR>
+" nnoremap <C-N> :CocCommand volar.action.nuxt<CR>
+nnoremap <C-S-R> :CocRestart<CR>
+nnoremap <leader>rr :CocRestart<CR>
 
 """"""" Nvim-Tree
 " Keys
