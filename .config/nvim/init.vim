@@ -45,13 +45,16 @@ Plug 'kana/vim-smartword'
 Plug 'bkad/camelcasemotion'
 Plug 'easymotion/vim-easymotion'
 Plug 'kamykn/spelunker.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'timonv/vim-cargo'
 " Plug 'chaoren/vim-wordmotion'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'KeitaNakamura/neodark.vim' 
+Plug 'junegunn/seoul256.vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -220,7 +223,12 @@ EOF
 " let g:airline_theme="base16_aquarium_dark"
 " let g:aquarium_style="dark"
 " colorscheme aquarium
-colorscheme nord
+" colorscheme nord
+" let g:neodark#terminal_transparent = 1
+" let g:neodark#solid_vertsplit = 1
+" colorscheme neodark
+colo seoul256
+" colorscheme dracula
 " lua require"feline".setup{}
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
