@@ -45,9 +45,14 @@ Plug 'kana/vim-smartword'
 Plug 'bkad/camelcasemotion'
 Plug 'easymotion/vim-easymotion'
 Plug 'kamykn/spelunker.vim'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'timonv/vim-cargo'
+Plug 'junegunn/gv.vim'
+Plug 'chrisbra/changesplugin'
+Plug 'dbarsam/vim-rainbow-parentheses'
+Plug 'rlue/vim-barbaric'
+Plug 'zivyangll/git-blame.vim'
 " Plug 'chaoren/vim-wordmotion'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -60,6 +65,9 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
+
+" Git Blame
+nnoremap <Leader>gb :<C-u>call gitblame#echo()<CR>
 
 " Vim Move
 let g:move_key_modifier = 'C'
@@ -94,7 +102,7 @@ let g:copilot_no_tab_map = v:true
 
 " NeoVide
 set guifont=MesloLGS\ NF:h16
-let g:neovide_transparency=0.8
+let g:neovide_transparency=0.85
 let g:neovide_scroll_animation_length = 0.1
 let g:neovide_floating_blur_amount_x = 2.0
 let g:neovide_floating_blur_amount_y = 2.0
@@ -298,15 +306,6 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

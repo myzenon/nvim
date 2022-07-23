@@ -2,6 +2,9 @@
     "volar.formatting.enable": false,
     "suggest.enablePreselect": true,
     "suggest.noselect": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "languageserver": {
         "dockerfile": {
             "command": "docker-langserver",
