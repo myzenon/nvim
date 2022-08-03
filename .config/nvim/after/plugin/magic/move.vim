@@ -1,10 +1,3 @@
-" Vim Move
-let g:move_key_modifier = 'C'
-let g:move_key_modifier_visualmode = 'C'
-
-" Vim CamelCaseMotion
-let g:camelcasemotion_key = '<leader>'
-
 " Vim EasyMotion
 " " Gif config
 map  / <Plug>(easymotion-sn)

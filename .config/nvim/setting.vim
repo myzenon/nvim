@@ -10,7 +10,7 @@ set tabstop=4         " Use 4 space tabs
 set shiftwidth=4      " Use 4 space tabs
 set incsearch         " Incremental search: jump to the first occurrence of search while the user is still searching
 set mouse=a           " Enable the mouse
-set autoindent        " Use autoindentation
+" set autoindent        " Use autoindentation
 set splitbelow        " Make horizontal splits below instead of above
 set splitright        " Make vertical splits on the right
 set scrolloff=3       " Start scrolling when the cursor is 3 lines away from the bottom of the window
@@ -24,3 +24,5 @@ set nofoldenable
 set signcolumn=yes    " Always show sign column
 set completeopt=menu,menuone,noselect
 set background=dark
+set termguicolors     " Set correct color
+set nowrap            " Set no line break

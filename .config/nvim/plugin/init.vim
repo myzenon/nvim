@@ -7,7 +7,7 @@ source ~/.config/nvim/plugin/feature.vim
 source ~/.config/nvim/plugin/lsp.vim
 
 " Magic Trick
-source ~/.config/nvim/plugin/Magic.vim
+source ~/.config/nvim/plugin/magic.vim
 
 " Theme
 source ~/.config/nvim/plugin/theme.vim

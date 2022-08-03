@@ -1,10 +1,12 @@
 " NvimTree
-if !exists('g:loaded_nvim-tree') | finish | endif
-
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 local list_binds = {
+    { key = "t",                          action = "tabnew" },
+}
+
+local list_binds_2 = {
     { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
     { key = "<C-e>",                          action = "edit_in_place" },
     { key = "O",                              action = "edit_no_picker" },
@@ -55,13 +57,17 @@ require'nvim-tree'.setup {
     git = {
         ignore = false,
     },
+    remove_keymaps = {
+        "<Tab>",
+    },
 	view = {
         number = true,
         relativenumber = true,
-		mappings = {
-    		list = list_binds,
-            custom_only = true,
-    	},
+        -- DEPECATED and have trouble
+		 mappings = {
+            list = list_binds,
+            -- custom_only = true,
+    	 },
 	},
     filters = {
     	dotfiles = false,
@@ -89,8 +95,8 @@ require'nvim-tree'.setup {
         require_confirm = true,
 	},
 }
-EOF
 
+EOF
 " Keys
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>

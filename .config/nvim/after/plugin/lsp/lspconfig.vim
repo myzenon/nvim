@@ -9,10 +9,11 @@ require("mason-lspconfig").setup()
 EOF
 
 lua << EOF
+local nvim_command = vim.api.nvim_command
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
--- Use an on_attach function to only map the following keys 
+-- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -29,6 +30,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'E', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
   -- formatting
   -- if client.server_capabilities.documentFormattingProvider then
@@ -79,6 +81,25 @@ nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
+}
+
+-- Volar
+nvim_lsp.volar.setup {
+    on_attach = on_attach,
+    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+    capabilities = capabilities,
+}
+
+-- CSS
+nvim_lsp.cssls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+-- CSS Modules
+nvim_lsp.cssmodules_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- ESLint
@@ -160,4 +181,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
   }
 )
+
+-- Hover
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, { focusable = false }
+)
+
+-- CursorHold 300ms
+-- vim.o.updatetime = 300
 EOF
+
+" augroup lsp
+"     autocmd!
+"     autocmd CursorHold * lua vim.diagnostic.open_float()
+" augroup END
