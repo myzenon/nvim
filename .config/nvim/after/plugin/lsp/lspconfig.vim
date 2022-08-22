@@ -5,6 +5,11 @@ endif
 lua << EOF
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("lsp_signature").setup()
+require('aerial').setup({})
+require "lsp-format".setup {
+    dart = { tab_width = 2 },
+}
 --vim.lsp.set_log_level("debug")
 EOF
 
@@ -19,6 +24,7 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
+  require("aerial").on_attach(client, bufnr)
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -31,14 +37,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'E', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  buf_set_keymap('n', 'ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'ff', '<Cmd>lua vim.lsp.buf.format()<CR>', opts)
 
   -- formatting
-  -- if client.server_capabilities.documentFormattingProvider then
-  --   vim.api.nvim_command [[augroup Format]]
-  --   vim.api.nvim_command [[autocmd! * <buffer>]]
-  --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-  --   vim.api.nvim_command [[augroup END]]
-  -- end
+  require "lsp-format".on_attach(client)
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
 
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
@@ -88,6 +97,52 @@ nvim_lsp.volar.setup {
     on_attach = on_attach,
     filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
     capabilities = capabilities,
+}
+
+-- Flutter
+require("flutter-tools").setup {
+  ui = {
+    -- the border type to use for all floating windows, the same options/formats
+    -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
+    border = "rounded",
+  },
+  decorations = {
+    statusline = {
+      -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+      -- this will show the current version of the flutter app from the pubspec.yaml file
+      app_version = false,
+      -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+      -- this will show the currently running device if an application was started with a specific
+      -- device
+      device = true,
+    }
+  },
+  widget_guides = {
+    enabled = false,
+  },
+  dev_log = {
+    enabled = true,
+    open_cmd = "tabedit", -- command to use to open the log buffer
+  },
+  dev_tools = {
+    autostart = false, -- autostart devtools server if not detected
+    auto_open_browser = false, -- Automatically opens devtools in the browser
+  },
+  outline = {
+    open_cmd = "30vnew", -- command to use to open the outline buffer
+    auto_open = true -- if true this will open the outline automatically when it is first populated
+  },
+  lsp = {
+    on_attach = on_attach,
+    capabilities = capabilities, -- e.g. lsp_status capabilities
+    -- see the link below for details on each option:
+    -- https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#client-workspace-configuration
+    settings = {
+      showTodos = true,
+      completeFunctionCalls = true,
+      enableSnippets = true,
+    }
+  }
 }
 
 -- CSS
@@ -141,8 +196,8 @@ nvim_lsp.eslint.setup {
 --      javascriptreact = 'eslint',
 --      typescript = 'eslint',
 --      typescriptreact = 'eslint',
---    },
 --    formatters = {
+--    },
 --      eslint_d = {
 --        command = 'eslint_d',
 --        rootPatterns = { '.git' },
@@ -173,22 +228,43 @@ nvim_lsp.eslint.setup {
 -- Icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
+      underline = true,
+      update_in_insert = false,
+      virtual_text = { spacing = 4, prefix = "●" },
+      severity_sort = true,
     }
-  }
 )
+
+-- Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●'
+  },
+  update_in_insert = true,
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
 
 -- Hover
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, { focusable = false }
 )
 
--- CursorHold 300ms
--- vim.o.updatetime = 300
+-- vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
+-- vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
+-- vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
+-- vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
+-- vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
+-- vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
+-- vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
+
 EOF
 
 " augroup lsp
