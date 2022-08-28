@@ -53,6 +53,7 @@ Plug 'chrisbra/changesplugin'
 Plug 'dbarsam/vim-rainbow-parentheses'
 Plug 'rlue/vim-barbaric'
 Plug 'zivyangll/git-blame.vim'
+Plug 'folke/zen-mode.nvim'
 " Plug 'chaoren/vim-wordmotion'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -65,6 +66,7 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 lua require"surround".setup{mappings_style = "surround"}
+lua require("zen-mode").setup{}
 
 " Git Blame
 nnoremap <Leader>gb :<C-u>call gitblame#echo()<CR>
