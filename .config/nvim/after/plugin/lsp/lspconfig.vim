@@ -120,17 +120,17 @@ require("flutter-tools").setup {
   widget_guides = {
     enabled = false,
   },
-  dev_log = {
-    enabled = true,
-    open_cmd = "tabedit", -- command to use to open the log buffer
-  },
+  -- dev_log = {
+    -- enabled = true,
+    -- open_cmd = "tabedit", -- command to use to open the log buffer
+  -- },
   dev_tools = {
     autostart = false, -- autostart devtools server if not detected
     auto_open_browser = false, -- Automatically opens devtools in the browser
   },
   outline = {
     open_cmd = "30vnew", -- command to use to open the outline buffer
-    auto_open = true -- if true this will open the outline automatically when it is first populated
+    auto_open = false -- if true this will open the outline automatically when it is first populated
   },
   lsp = {
     on_attach = on_attach,

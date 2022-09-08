@@ -85,7 +85,7 @@ vim.keymap.set("n", "sf", function()
 end)
 EOF
 nnoremap <Tab><Tab> <cmd>bnext<CR>
-nnoremap <S-Tab> <cmd>bnext<CR>
+nnoremap <S-Tab> <cmd>bprevious<CR>
 " lua << EOF
 " require('telescope').setup{
 "     defaults = {

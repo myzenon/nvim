@@ -7,3 +7,6 @@ homebrew
 dropdownClassName
 zenon
 dropdown
+dismissible
+Timestamp
+serializable
