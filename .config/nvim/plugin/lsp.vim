@@ -28,6 +28,6 @@ Plug 'folke/lsp-colors.nvim'
 
 " Flutter
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+" Plug 'thosakwe/vim-flutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'

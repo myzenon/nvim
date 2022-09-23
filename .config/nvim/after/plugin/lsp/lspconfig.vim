@@ -120,10 +120,10 @@ require("flutter-tools").setup {
   widget_guides = {
     enabled = false,
   },
-  -- dev_log = {
-    -- enabled = true,
-    -- open_cmd = "tabedit", -- command to use to open the log buffer
-  -- },
+  dev_log = {
+    enabled = true,
+    open_cmd = "edit", -- command to use to open the log buffer
+  },
   dev_tools = {
     autostart = false, -- autostart devtools server if not detected
     auto_open_browser = false, -- Automatically opens devtools in the browser
@@ -133,6 +133,13 @@ require("flutter-tools").setup {
     auto_open = false -- if true this will open the outline automatically when it is first populated
   },
   lsp = {
+    color = { -- show the derived colours for dart variables
+      enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+      background = true, -- highlight the background
+      foreground = true, -- highlight the foreground
+      virtual_text = true, -- show the highlight using virtual text
+      virtual_text_str = "■", -- the virtual text character to highlight
+    },
     on_attach = on_attach,
     capabilities = capabilities, -- e.g. lsp_status capabilities
     -- see the link below for details on each option:

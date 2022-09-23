@@ -7,6 +7,7 @@ if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
+require("telescope").load_extension("flutter")
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
@@ -86,6 +87,8 @@ end)
 EOF
 nnoremap <Tab><Tab> <cmd>bnext<CR>
 nnoremap <S-Tab> <cmd>bprevious<CR>
+nnoremap <C-Tab> <cmd>tabnext<CR>
+nnoremap <C-S-Tab> <cmd>tabprevious<CR>
 " lua << EOF
 " require('telescope').setup{
 "     defaults = {
@@ -95,5 +98,3 @@ nnoremap <S-Tab> <cmd>bprevious<CR>
 " EOF
 " nnoremap <C-p> <cmd>Telescope find_files<CR>
 " nnoremap <C-\> <cmd>Telescope live_grep<CR>
-" nnoremap <C-]> <cmd>Telescope buffers<CR><ESC>
-" nnoremap <leader>fh <cmd>Telescope help_tags<CR>
