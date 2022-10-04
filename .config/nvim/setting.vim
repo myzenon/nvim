@@ -9,7 +9,7 @@ set undolevels=1000   " Set the number of undos that are remembered
 set tabstop=4         " Use 4 space tabs
 set shiftwidth=4      " Use 4 space tabs
 set incsearch         " Incremental search: jump to the first occurrence of search while the user is still searching
-set mouse=a           " Enable the mouse
+" set mouse=a           " Enable the mouse
 " set autoindent        " Use autoindentation
 set splitbelow        " Make horizontal splits below instead of above
 set splitright        " Make vertical splits on the right
