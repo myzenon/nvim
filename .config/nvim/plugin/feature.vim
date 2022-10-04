@@ -15,7 +15,7 @@ Plug 'gioele/vim-autoswap'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-"  Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'chrisbra/changesplugin'
 Plug 'zivyangll/git-blame.vim'
