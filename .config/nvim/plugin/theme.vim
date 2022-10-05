@@ -19,8 +19,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Zen Mode
 Plug 'folke/zen-mode.nvim'
+" Plug 'Pocco81/true-zen.nvim'
 
 " Color Scheme
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'junegunn/seoul256.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'folke/twilight.nvim'
