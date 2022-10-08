@@ -1,6 +1,9 @@
 " Load Settings
 runtime ./setting.vim
 
+" Key Map
+runtime ./keymap.lua
+
 " Before
 runtime ./before.vim
 
