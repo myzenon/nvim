@@ -2,6 +2,7 @@
 runtime ./setting.vim
 
 " Key Map
+runtime ./keymap.vim
 runtime ./keymap.lua
 
 " Before
