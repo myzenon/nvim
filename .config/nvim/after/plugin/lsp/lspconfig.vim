@@ -95,7 +95,8 @@ nvim_lsp.tsserver.setup {
 -- Volar
 nvim_lsp.volar.setup {
     on_attach = on_attach,
-    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+    filetypes = {'typescript', 'javascript', 'vue', 'json'},
+    --filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
     capabilities = capabilities,
 }
 

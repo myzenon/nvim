@@ -8,3 +8,5 @@ let g:move_key_modifier_visualmode = 'C'
 
 " Vim CamelCaseMotion
 let g:camelcasemotion_key = '<leader>'
+
+let g:splitjoin_html_attributes_bracket_on_new_line = 1

@@ -7,7 +7,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'hood/popui.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'sheerun/vim-polyglot'
 Plug 'stevearc/aerial.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 

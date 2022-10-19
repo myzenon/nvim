@@ -31,5 +31,9 @@ Plug 'andrewradev/splitjoin.vim'
 " Auto Close Parentheses
 Plug 'cohama/lexima.vim'
 
+" Auto Close Tag
+" Plug 'alvan/vim-closetag'
+Plug 'windwp/nvim-ts-autotag'
+
 " Emmet
 Plug 'mattn/emmet-vim'
