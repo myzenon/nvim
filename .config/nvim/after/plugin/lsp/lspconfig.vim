@@ -89,7 +89,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities
+  capabilities = capabilities,
+  init_options = {
+    preferences = {
+      quotePreference = 'single',
+    },
+  },
 }
 
 -- Volar
