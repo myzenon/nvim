@@ -88,7 +88,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 -- Typescript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "json", "javascript", "javascriptreact", "javascript.jsx" },
   capabilities = capabilities,
   init_options = {
     preferences = {
@@ -97,13 +97,37 @@ nvim_lsp.tsserver.setup {
   },
 }
 
--- Volar
-nvim_lsp.volar.setup {
-    on_attach = on_attach,
-    filetypes = {'typescript', 'javascript', 'vue', 'json'},
-    --filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-    capabilities = capabilities,
+-- HTML
+nvim_lsp.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
+
+-- CSS, SCSS, LESS
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- CSS Modules (e.g, React)
+nvim_lsp.cssmodules_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- Stylelint (for formatting css)
+nvim_lsp.stylelint_lsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- Volar
+-- nvim_lsp.volar.setup {
+    -- on_attach = on_attach,
+    -- filetypes = {'typescript', 'javascript', 'vue', 'json'},
+    --filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+    -- capabilities = capabilities,
+-- }
 
 -- Flutter
 require("flutter-tools").setup {
@@ -158,18 +182,6 @@ require("flutter-tools").setup {
   }
 }
 
--- CSS
-nvim_lsp.cssls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
-
--- CSS Modules
-nvim_lsp.cssmodules_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
-
 -- ESLint
 nvim_lsp.eslint.setup {
   on_attach = on_attach,
@@ -178,65 +190,65 @@ nvim_lsp.eslint.setup {
 }
 
 -- Diagnosticls
---nvim_lsp.diagnosticls.setup {
---  on_attach = on_attach,
---  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
---  init_options = {
---    linters = {
---      eslint = {
---        command = 'eslint_d',
---        rootPatterns = { '.git' },
---        debounce = 100,
---        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
---        sourceName = 'eslint_d',
---        parseJson = {
---          errorsRoot = '[0].messages',
---          line = 'line',
---          column = 'column',
---          endLine = 'endLine',
---          endColumn = 'endColumn',
---          message = '[eslint] ${message} [${ruleId}]',
---          security = 'severity'
---        },
---        securities = {
---          [2] = 'error',
---          [1] = 'warning'
---        }
---      },
---    },
---    filetypes = {
---      javascript = 'eslint',
---      javascriptreact = 'eslint',
---      typescript = 'eslint',
---      typescriptreact = 'eslint',
---    formatters = {
---    },
---      eslint_d = {
---        command = 'eslint_d',
---        rootPatterns = { '.git' },
---        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
---        rootPatterns = { '.git' },
---      },
---      prettier = {
---        command = 'prettier_d_slim',
---        rootPatterns = { '.git' },
---        -- requiredFiles: { 'prettier.config.js' },
---        args = { '--stdin', '--stdin-filepath', '%filename' }
---      }
---    },
---    formatFiletypes = {
---      css = 'prettier',
---      javascript = 'prettier',
---      javascriptreact = 'prettier',
---      json = 'prettier',
---      scss = 'prettier',
---      less = 'prettier',
---      typescript = 'prettier',
---      typescriptreact = 'prettier',
---      json = 'prettier',
---    }
---  }
---}
+nvim_lsp.diagnosticls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  init_options = {
+    -- linters = {
+      -- eslint = {
+         -- command = 'eslint_d',
+         -- rootPatterns = { '.git' },
+         -- debounce = 100,
+         -- args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+         -- sourceName = 'eslint_d',
+         -- parseJson = {
+           -- errorsRoot = '[0].messages',
+           -- line = 'line',
+           -- column = 'column',
+           -- endLine = 'endLine',
+           -- endColumn = 'endColumn',
+           -- message = '[eslint] ${message} [${ruleId}]',
+           -- security = 'severity'
+         -- },
+         -- securities = {
+          -- [2] = 'error',
+          -- [1] = 'warning',
+         -- }
+       -- },
+     -- },
+     -- filetypes = {
+       -- javascript = 'eslint',
+       -- javascriptreact = 'eslint',
+       -- typescript = 'eslint',
+       -- typescriptreact = 'eslint',
+     -- },
+     formatters = {
+       eslint = {
+         command = 'eslint_d',
+         -- rootPatterns = { '.git' },
+         args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+       },
+       -- prettier = {
+         -- command = 'prettier_d_slim',
+         -- rootPatterns = { '.git' },
+         -- requiredFiles: { 'prettier.config.js' },
+         -- args = { '--stdin', '--stdin-filepath', '%filename' }
+       -- }
+    },
+     formatFiletypes = {
+       css = 'eslint',
+       javascript = 'eslint',
+       javascriptreact = 'eslint',
+       json = 'eslint',
+       scss = 'eslint',
+       less = 'eslint',
+       typescript = 'eslint',
+       typescriptreact = 'eslint',
+       json = 'eslint',
+     }
+   }
+ }
 
 -- Icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
