@@ -185,7 +185,7 @@ require("flutter-tools").setup {
 -- ESLint
 nvim_lsp.eslint.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
 
@@ -193,7 +193,8 @@ nvim_lsp.eslint.setup {
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  -- filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
   init_options = {
     -- linters = {
       -- eslint = {
@@ -237,15 +238,15 @@ nvim_lsp.diagnosticls.setup {
        -- }
     },
      formatFiletypes = {
-       css = 'eslint',
+       -- css = 'eslint',
        javascript = 'eslint',
        javascriptreact = 'eslint',
-       json = 'eslint',
-       scss = 'eslint',
-       less = 'eslint',
+       -- json = 'eslint',
+       -- scss = 'eslint',
+       -- less = 'eslint',
        typescript = 'eslint',
        typescriptreact = 'eslint',
-       json = 'eslint',
+       -- json = 'eslint',
      }
    }
  }
