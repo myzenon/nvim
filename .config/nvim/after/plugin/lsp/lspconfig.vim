@@ -6,7 +6,6 @@ lua << EOF
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lsp_signature").setup()
-require('aerial').setup({})
 require "lsp-format".setup {
     dart = { tab_width = 2 },
 }
@@ -24,7 +23,6 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  require("aerial").on_attach(client, bufnr)
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -78,7 +76,6 @@ local on_attach = function(client, bufnr)
     '', -- TypeParameter
   }
 end
-
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
