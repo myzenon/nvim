@@ -5,7 +5,7 @@ endif
 lua << EOF
 require("mason").setup()
 require("mason-lspconfig").setup({
- ensure_installed = { "sumneko_lua", "rust_analyzer", "volar", "tsserver", "stylelint_lsp", "html", "dockerls", "cssls", "cssmodules_ls", "diagnosticls" }
+ ensure_installed = { "sumneko_lua", "rust_analyzer", "volar", "tsserver", "stylelint_lsp", "html", "dockerls", "cssls", "cssmodules_ls", "diagnosticls", "eslint" }
 })
 require("lsp_signature").setup()
 require "lsp-format".setup {
