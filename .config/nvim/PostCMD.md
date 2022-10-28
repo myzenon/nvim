@@ -8,9 +8,11 @@ brew install watchman ripgrep
 pip3 install neovim
 
 ### Git
+```
 git config --global push.autoSetupRemote true
-git config commit.gpgsign true
+git config --global commit.gpgsign true
 git config --global user.signingkey F2C7AB29
-
+git config --global init.defaultBranch main
+```
 ### Before use gpg
 export GPG_TTY=$(tty)
