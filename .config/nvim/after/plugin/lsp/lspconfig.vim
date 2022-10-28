@@ -4,7 +4,9 @@ endif
 
 lua << EOF
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+ ensure_installed = { "sumneko_lua", "rust_analyzer", "volar", "tsserver", "stylelint_lsp", "html", "dockerls", "cssls", "cssmodules_ls", "diagnosticls" }
+})
 require("lsp_signature").setup()
 require "lsp-format".setup {
     dart = { tab_width = 2 },
@@ -81,6 +83,26 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+
+-- Lua
+nvim_lsp.sumneko_lua.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+    },
+  },
+}
 
 -- Typescript
 nvim_lsp.tsserver.setup {
