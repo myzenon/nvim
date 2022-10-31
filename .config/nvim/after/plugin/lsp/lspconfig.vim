@@ -148,6 +148,15 @@ nvim_lsp.stylelint_lsp.setup {
     -- capabilities = capabilities,
 -- }
 
+
+-- Rust
+require("rust-tools").setup {
+  server = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  },
+}
+
 -- Flutter
 require("flutter-tools").setup {
   ui = {

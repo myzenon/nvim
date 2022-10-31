@@ -27,8 +27,14 @@ Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/lsp-colors.nvim'
 
+" Rust
+Plug 'simrat39/rust-tools.nvim'
+Plug 'mfussenegger/nvim-dap'
+
 " Flutter
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'thosakwe/vim-flutter'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'
+
+" Magic UI
+Plug 'nvim-lua/plenary.nvim'
