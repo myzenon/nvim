@@ -16,3 +16,6 @@ git config --global init.defaultBranch main
 ```
 ### Before use gpg
 export GPG_TTY=$(tty)
+
+## Rust Graph
+brew install graphviz

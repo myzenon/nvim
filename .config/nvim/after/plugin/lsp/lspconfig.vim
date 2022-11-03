@@ -152,7 +152,15 @@ nvim_lsp.stylelint_lsp.setup {
 -- Rust
 require("rust-tools").setup {
   server = {
-    on_attach = on_attach,
+    -- on_attach = on_attach,
+    on_attach = function(client, bufnr)
+      local rt = require("rust-tools")
+      -- Hover actions
+      vim.keymap.set("n", "ha", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "cga", rt.code_action_group.code_action_group, { buffer = bufnr })
+      on_attach(client, bufnr)
+    end,
     capabilities = capabilities,
   },
 }
