@@ -30,6 +30,7 @@ Plug 'folke/lsp-colors.nvim'
 " Rust
 Plug 'simrat39/rust-tools.nvim'
 Plug 'mfussenegger/nvim-dap'
+Plug 'timonv/vim-cargo'
 
 " Flutter
 Plug 'dart-lang/dart-vim-plugin'
