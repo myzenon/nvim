@@ -1,4 +1,6 @@
-" Language Protocol Server Configuration
+local Plug = vim.fn['plug#']
+
+-- Language Protocol Server Configuration
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -12,7 +14,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'stevearc/aerial.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
-" Auto Completion
+-- Auto Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -22,20 +24,20 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'L3MON4D3/LuaSnip'
 
-" Styling
+-- Styling
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/lsp-colors.nvim'
 
-" Rust
+-- Rust
+Plug 'rust-lang/rust.vim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'timonv/vim-cargo'
 
-" Flutter
+-- Flutter
 Plug 'dart-lang/dart-vim-plugin'
-" Plug 'thosakwe/vim-flutter'
 Plug 'akinsho/flutter-tools.nvim'
 
-" Magic UI
+-- Magic UI
 Plug 'nvim-lua/plenary.nvim'
