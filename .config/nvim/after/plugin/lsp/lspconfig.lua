@@ -328,5 +328,3 @@ nvim_lsp.diagnosticls.setup {
         }
     }
 }
-
-print("zenon")
