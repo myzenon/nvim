@@ -154,6 +154,18 @@ nvim_lsp.tsserver.setup {
     },
 }
 
+-- Docker
+nvim_lsp.dockerls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+-- Terraform
+nvim_lsp.terraformls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
 -- HTML
 nvim_lsp.html.setup {
     on_attach = on_attach,

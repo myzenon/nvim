@@ -21,5 +21,6 @@ lspconfig.setup {
         "cssmodules_ls",
         "diagnosticls",
         "eslint",
+        "terraformls",
     }
 }
