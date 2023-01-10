@@ -1,0 +1,4 @@
+tmux rename-window Editor;
+tmux new-window;
+tmux rename-window Runner;
+tmux last-window;
