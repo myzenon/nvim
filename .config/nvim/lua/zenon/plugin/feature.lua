@@ -12,12 +12,13 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'gioele/vim-autoswap'
 
 -- Git
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/gv.vim'
-Plug 'chrisbra/changesplugin'
-Plug 'zivyangll/git-blame.vim'
+Plug 'tpope/vim-fugitive' -- Git
+Plug 'tpope/vim-rhubarb' -- Github
+Plug 'junegunn/gv.vim' -- Graph
+Plug 'lewis6991/gitsigns.nvim' -- Show sign
+-- Plug 'airblade/vim-gitgutter' -- Show sign
+-- Plug 'chrisbra/changesplugin' -- Show sign
+-- Plug 'zivyangll/git-blame.vim' -- Git Blame
 
 -- Dictionary
 Plug 'kamykn/spelunker.vim'

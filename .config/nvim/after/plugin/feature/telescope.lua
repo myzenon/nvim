@@ -85,3 +85,11 @@ vim.keymap.set("n", "sf", function()
         layout_config = { height = 400 }
     })
 end)
+
+-- Git
+vim.keymap.set('n', '<leader>gs', function()
+    builtin.git_status()
+end)
+vim.keymap.set('n', '<leader>gB', function()
+    builtin.git_branches()
+end)
