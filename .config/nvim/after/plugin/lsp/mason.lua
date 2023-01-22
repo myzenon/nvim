@@ -22,5 +22,7 @@ lspconfig.setup {
         "diagnosticls",
         "eslint",
         "terraformls",
+        "ruby_ls",
+        "vuels",
     }
 }

@@ -6,3 +6,4 @@ vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>')
 
 -- Git Signs
 require('gitsigns').setup()
+vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>')

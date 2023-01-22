@@ -191,12 +191,25 @@ nvim_lsp.stylelint_lsp.setup {
 }
 
 -- Volar
-nvim_lsp.volar.setup {
+-- nvim_lsp.volar.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     filetypes = { 'vue' },
+--     -- filetypes = {'typescript', 'javascript', 'vue', 'json'},
+--     -- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+-- }
+
+-- Vue
+nvim_lsp.vuels.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { 'vue' },
-    -- filetypes = {'typescript', 'javascript', 'vue', 'json'},
-    -- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+}
+
+-- Ruby
+nvim_lsp.ruby_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- Rust
@@ -209,6 +222,14 @@ require("rust-tools").setup {
             vim.keymap.set("n", "ha", rust.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
             vim.keymap.set("n", "cga", rust.code_action_group.code_action_group, { buffer = bufnr })
+            -- Runnables
+            vim.keymap.set("n", "rr", rust.runnables.runnables, { buffer = bufnr })
+            -- Parent Module
+            vim.keymap.set("n", "rp", rust.parent_module.parent_module, { buffer = bufnr })
+            -- Debuggables
+            vim.keymap.set("n", "<leader>rd", rust.debuggables.debuggables, { buffer = bufnr })
+            -- Open Cargo Toml
+            vim.keymap.set("n", "<leader>rc", rust.open_cargo_toml.open_cargo_toml, { buffer = bufnr })
             on_attach(client, bufnr)
             enable_format_on_save(client, bufnr)
         end,
