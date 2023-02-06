@@ -1,4 +1,7 @@
-vim.cmd [[colorscheme jellybeans]]
+-- vim.cmd [[colorscheme jellybeans]]
+vim.cmd [[colorscheme kanagawa]]
+-- vim.cmd [[colorscheme no-clown-fiesta]]
+-- vim.cmd [[colorscheme nord]]
 
 vim.cmd [[highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e]]
 vim.cmd [[highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE]]

@@ -26,5 +26,11 @@ Plug 'folke/zen-mode.nvim'
 -- Color Scheme
 -- Plug 'arcticicestudio/nord-vim'
 -- Plug 'junegunn/seoul256.vim'
-Plug 'nanotech/jellybeans.vim'
+-- Plug 'nanotech/jellybeans.vim'
+Plug 'rebelot/kanagawa.nvim'
+-- Plugv 'aktersnurra/no-clown-fiesta.nvim'
+-- Plug 'shaunsingh/nord.nvim'
+
+
+-- Twilight Mode
 Plug 'folke/twilight.nvim'

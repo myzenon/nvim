@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive' -- Git
 Plug 'tpope/vim-rhubarb' -- Github
 Plug 'junegunn/gv.vim' -- Graph
 Plug 'lewis6991/gitsigns.nvim' -- Show sign
+Plug 'kdheepak/lazygit.nvim'
 -- Plug 'airblade/vim-gitgutter' -- Show sign
 -- Plug 'chrisbra/changesplugin' -- Show sign
 -- Plug 'zivyangll/git-blame.vim' -- Git Blame
