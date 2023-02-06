@@ -1,0 +1,11 @@
+gui:
+    expandFocusedSidePanel: true
+git:
+    paging:
+        colorArg: never
+        pager: delta --dark --paging=never
+    log:
+        showWholeGraph: true
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
