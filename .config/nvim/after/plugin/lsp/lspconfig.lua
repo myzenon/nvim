@@ -78,12 +78,12 @@ protocol.CompletionItemKind = {
 
 -- Setting up vim diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "●" },
-    severity_sort = true,
-})
+        vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = { spacing = 4, prefix = "●" },
+        severity_sort = true,
+    })
 
 vim.diagnostic.config({
     virtual_text = {
@@ -97,8 +97,8 @@ vim.diagnostic.config({
 
 -- Disable show document on hover
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, { focusable = false }
-)
+        vim.lsp.handlers.hover, { focusable = false }
+    )
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -113,7 +113,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Setting up languages server
 
 -- Lua
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         enable_format_on_save(client, bufnr)
