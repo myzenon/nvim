@@ -1,7 +1,7 @@
 -- Airline
 vim.g['airline#extensions#tabline#enabled'] = 1
 vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme = 'google_dark'
+vim.g.airline_theme = 'deus'
 
 -- Move
 vim.g.move_key_modifier = 'C'
