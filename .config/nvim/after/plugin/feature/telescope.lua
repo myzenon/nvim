@@ -46,6 +46,7 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
+-- Files
 vim.keymap.set('n', ';f',
     function()
         builtin.find_files({
@@ -65,14 +66,6 @@ end)
 vim.keymap.set('n', ';;', function()
     builtin.resume()
 end)
-vim.keymap.set('n', ';e', function()
-    builtin.diagnostics({
-        bufnr = 0
-    })
-end)
-vim.keymap.set('n', ';E', function()
-    builtin.diagnostics()
-end)
 vim.keymap.set("n", "sf", function()
     telescope.extensions.file_browser.file_browser({
         path = "%:p:h",
@@ -84,6 +77,19 @@ vim.keymap.set("n", "sf", function()
         initial_mode = "normal",
         layout_config = { height = 400 }
     })
+end)
+
+-- LSP
+vim.keymap.set('n', ';e', function()
+    builtin.diagnostics({
+        bufnr = 0
+    })
+end)
+vim.keymap.set('n', ';E', function()
+    builtin.diagnostics()
+end)
+vim.keymap.set('n', ';v', function()
+    builtin.lsp_document_symbols()
 end)
 
 -- Git
