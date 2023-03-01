@@ -91,6 +91,9 @@ end)
 vim.keymap.set('n', ';v', function()
     builtin.lsp_document_symbols()
 end)
+vim.keymap.set('n', ';V', function()
+    builtin.lsp_dynamic_workspace_symbols()
+end)
 
 -- Git
 vim.keymap.set('n', '<leader>gs', function()
