@@ -1,10 +1,12 @@
-local status, cmp = pcall(require, "cmp")
+local status, cmp = pcall(require, 'cmp')
 if (not status) then return end
-local lspkind = require 'lspkind'
+local status, lspkind = pcall(require, 'lspkind')
+if (not status) then return end
 
 local has_words_before = function()
+    ---@diagnostic disable-next-line: deprecated
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 cmp.setup({
@@ -23,17 +25,17 @@ cmp.setup({
             select = false
             -- select = true
         }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif vim.fn["vsnip#available"](1) == 1 then
-                feedkey("<Plug>(vsnip-expand-or-jump)", "")
+                -- elseif vim.fn['vsnip#available'](1) == 1 then
+                --     feedkey('<Plug>(vsnip-expand-or-jump)', '')
             elseif has_words_before() then
                 cmp.complete()
             else
                 fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
             end
-        end, { "i", "s" }),
+        end, { 'i', 's' }),
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

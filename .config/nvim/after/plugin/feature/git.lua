@@ -5,7 +5,9 @@
 vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>')
 
 -- Git Signs
-require('gitsigns').setup()
+local status, gitsigns = pcall(require, 'gitsigns')
+if (not status) then return end
+gitsigns.setup()
 vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>')
 
 -- Lazy Git

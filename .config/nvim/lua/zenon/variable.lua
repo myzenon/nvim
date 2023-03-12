@@ -20,5 +20,5 @@ vim.g.VM_maps = {
 }
 
 -- Copilot
-vim.g.copilot_node_command = '/opt/homebrew/Cellar/node@16/16.18.1/bin/node'
-vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_node_command = '/opt/homebrew/Cellar/node@16/16.18.1/bin/node'
+-- vim.g.copilot_no_tab_map = true

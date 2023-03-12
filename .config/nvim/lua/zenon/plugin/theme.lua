@@ -1,36 +1,38 @@
-local Plug = vim.fn['plug#']
+local status, packer = pcall(require, 'packer')
+if (not status) then return end
+
+local use = packer.use
 
 -- Icon
-Plug 'kyazdani42/nvim-web-devicons'
+use 'kyazdani42/nvim-web-devicons'
 
 -- Transparent
-Plug 'tribela/vim-transparent'
+use 'tribela/vim-transparent'
 
 -- Fancy
-Plug 'dbarsam/vim-rainbow-parentheses'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ap/vim-css-color'
-Plug 'valloric/matchtagalways'
-Plug 'machakann/vim-highlightedyank'
-Plug 'ntpeters/vim-better-whitespace'
+use 'dbarsam/vim-rainbow-parentheses'
+use 'nathanaelkane/vim-indent-guides'
+use 'ap/vim-css-color'
+use 'valloric/matchtagalways'
+use 'machakann/vim-highlightedyank'
+use 'ntpeters/vim-better-whitespace'
 
 -- Bar
-Plug 'mkitt/tabline.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+use 'mkitt/tabline.vim'
+use 'vim-airline/vim-airline'
+use 'vim-airline/vim-airline-themes'
 
 -- Zen Mode
-Plug 'folke/zen-mode.nvim'
--- Plug 'Pocco81/true-zen.nvim'
+use 'folke/zen-mode.nvim'
+-- use 'Pocco81/true-zen.nvim'
 
 -- Color Scheme
--- Plug 'arcticicestudio/nord-vim'
--- Plug 'junegunn/seoul256.vim'
-Plug 'nanotech/jellybeans.vim'
--- Plug 'rebelot/kanagawa.nvim'
--- Plugv 'aktersnurra/no-clown-fiesta.nvim'
--- Plug 'shaunsingh/nord.nvim'
-
+-- use 'arcticicestudio/nord-vim'
+-- use 'junegunn/seoul256.vim'
+use 'nanotech/jellybeans.vim'
+-- use 'rebelot/kanagawa.nvim'
+-- use 'aktersnurra/no-clown-fiesta.nvim'
+-- use 'shaunsingh/nord.nvim'
 
 -- Twilight Mode
-Plug 'folke/twilight.nvim'
+use 'folke/twilight.nvim'

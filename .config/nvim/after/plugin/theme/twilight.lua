@@ -1,12 +1,7 @@
-vim.cmd [[colorscheme jellybeans]]
--- vim.cmd [[colorscheme kanagawa]]
--- vim.cmd [[colorscheme no-clown-fiesta]]
--- vim.cmd [[colorscheme nord]]
+local status, twilight = pcall(require, 'twilight')
+if (not status) then return end
 
-vim.cmd [[highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e]]
-vim.cmd [[highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE]]
-
-require("twilight").setup {
+twilight.setup {
     dimming = {
         alpha = 0.40, -- amount of dimming
         -- we try to get the foreground from the highlight groups or fallback color

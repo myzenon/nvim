@@ -1,41 +1,44 @@
-local Plug = vim.fn['plug#']
+local status, packer = pcall(require, 'packer')
+if (not status) then return end
+
+local use = packer.use
 
 -- Surround
-Plug 'ur4ltz/surround.nvim'
+use 'ur4ltz/surround.nvim'
 
 -- System Copy
-Plug 'christoomey/vim-system-copy'
+use 'christoomey/vim-system-copy'
 
 -- Replace with register
-Plug 'vim-scripts/ReplaceWithRegister'
+use 'vim-scripts/ReplaceWithRegister'
 
 -- Comment things
-Plug 'tpope/vim-commentary'
+use 'tpope/vim-commentary'
 
 -- Repeat with plugins support
-Plug 'tpope/vim-repeat'
+use 'tpope/vim-repeat'
 
 -- Move
-Plug 'matze/vim-move'
+use 'matze/vim-move'
 
 -- Multi cursor
-Plug('mg979/vim-visual-multi', {['branch'] = 'master'})
+use 'mg979/vim-visual-multi'
 
 -- Easy motion
-Plug 'easymotion/vim-easymotion'
+use 'easymotion/vim-easymotion'
 
 -- Command next target
-Plug 'wellle/targets.vim'
+use 'wellle/targets.vim'
 
 -- Split and Join snippet code
-Plug 'andrewradev/splitjoin.vim'
+use 'andrewradev/splitjoin.vim'
 
 -- Auto Close Parentheses
-Plug 'cohama/lexima.vim'
+use 'cohama/lexima.vim'
 
 -- Auto Close Tag
--- Plug 'alvan/vim-closetag'
-Plug 'windwp/nvim-ts-autotag'
+-- use 'alvan/vim-closetag'
+use 'windwp/nvim-ts-autotag'
 
 -- Emmet
-Plug 'mattn/emmet-vim'
+use 'mattn/emmet-vim'
