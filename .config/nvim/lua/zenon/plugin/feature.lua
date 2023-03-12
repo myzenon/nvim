@@ -15,9 +15,9 @@ use 'nvim-telescope/telescope-file-browser.nvim'
 use 'gioele/vim-autoswap'
 
 -- Git
-use 'tpope/vim-fugitive' -- Git
-use 'tpope/vim-rhubarb' -- Github
-use 'junegunn/gv.vim' -- Graph
+use 'tpope/vim-fugitive'      -- Git
+use 'tpope/vim-rhubarb'       -- Github
+use 'junegunn/gv.vim'         -- Graph
 use 'lewis6991/gitsigns.nvim' -- Show sign
 use 'kdheepak/lazygit.nvim'
 -- use 'airblade/vim-gitgutter' -- Show sign
