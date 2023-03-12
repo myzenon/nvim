@@ -13,7 +13,7 @@ use 'christoomey/vim-system-copy'
 use 'vim-scripts/ReplaceWithRegister'
 
 -- Comment things
-use 'tpope/vim-commentary'
+use 'tomtom/tcomment_vim'
 
 -- Repeat with plugins support
 use 'tpope/vim-repeat'
