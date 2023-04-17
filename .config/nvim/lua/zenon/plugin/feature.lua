@@ -29,6 +29,7 @@ use 'kamykn/spelunker.vim'
 
 -- Github Copilot
 -- use 'github/copilot.vim'
+use 'zbirenbaum/copilot.lua'
 
 -- Move in word
 use 'kana/vim-smartword'

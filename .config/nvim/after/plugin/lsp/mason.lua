@@ -13,7 +13,6 @@ lspconfig.setup {
         'cssls',
         'dockerls',
         'diagnosticls',
-        'lua_ls',
         'html',
         'ruby_ls',
         'rust_analyzer',

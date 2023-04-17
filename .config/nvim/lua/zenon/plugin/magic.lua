@@ -42,9 +42,3 @@ use 'windwp/nvim-ts-autotag'
 
 -- Emmet
 use 'mattn/emmet-vim'
-
--- Tmux
-use({
-    'aserowy/tmux.nvim',
-    config = function() return require('tmux').setup() end
-})

@@ -3,7 +3,7 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
-vim.wo.number = true -- Show number
+vim.wo.number = true         -- Show number
 vim.wo.relativenumber = true -- Show relative number
 
 -- vim.opt.showmatch = true -- Show matching braces
@@ -28,21 +28,21 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
-vim.opt.title = true -- Show title on terminal
-vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
-vim.opt.smartcase = true -- Use case sensitive search if there is a capital letter in the search
-vim.opt.hlsearch = false -- Don't highlight search results
-vim.opt.shiftwidth = 4 -- Use 4 space tabs
-vim.opt.tabstop = 4 -- Use 4 space tabs
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.splitbelow = true -- Make horizontal splits below instead of above
-vim.opt.splitright = true -- Make vertical splits on the right
-vim.opt.scrolloff = 10 -- Start scrolling when the cursor is 10 lines away from the bottom of the window
-vim.opt.cursorline = true -- Highlight the current line
-vim.opt.autoread = true -- Automatically reload the file when it is changed from an outside program
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.title = true         -- Show title on terminal
+vim.opt.ignorecase = true    -- Case insensitive searching UNLESS /C or capital in search
+vim.opt.smartcase = true     -- Use case sensitive search if there is a capital letter in the search
+vim.opt.hlsearch = false     -- Don't highlight search results
+vim.opt.shiftwidth = 4       -- Use 4 space tabs
+vim.opt.tabstop = 4          -- Use 4 space tabs
+vim.opt.expandtab = true     -- Use spaces instead of tabs
+vim.opt.splitbelow = true    -- Make horizontal splits below instead of above
+vim.opt.splitright = true    -- Make vertical splits on the right
+vim.opt.scrolloff = 10       -- Start scrolling when the cursor is 10 lines away from the bottom of the window
+vim.opt.cursorline = true    -- Highlight the current line
+vim.opt.autoread = true      -- Automatically reload the file when it is changed from an outside program
+vim.opt.wrap = false         -- No Wrap lines
 vim.opt.termguicolors = true -- Set correct color
-vim.opt.backup = false -- Disable backup
+vim.opt.backup = false       -- Disable backup
 
 vim.opt.winblend = 0
 vim.opt.wildoptions = 'pum'
@@ -68,3 +68,9 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Disable 's'
 vim.cmd [[map s <Nop>]]
+
+-- Lazy redraw
+vim.cmd [[ set lazyredraw ]]
+
+-- TTY Fast
+vim.cmd [[ set ttyfast ]]
