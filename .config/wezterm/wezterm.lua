@@ -1,5 +1,12 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function(cmd) -- set startup Window position
+    local tab, pane, window = mux.spawn_window(cmd or
+        { position = { x = "10%", y = "10%" }, origin = "ActiveScreen" }
+    )
+end)
 
 -- This table will hold the configuration.
 local config = {}
