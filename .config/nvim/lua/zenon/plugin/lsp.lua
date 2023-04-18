@@ -10,7 +10,8 @@ use 'neovim/nvim-lspconfig'
 use 'lukas-reineke/lsp-format.nvim'
 use 'ray-x/lsp_signature.nvim'
 use 'RishabhRD/popfix'
-use 'hood/popui.nvim'
+-- use 'hood/popui.nvim'
+use 'stevearc/dressing.nvim'
 use 'folke/trouble.nvim'
 use 'nvim-treesitter/nvim-treesitter'
 use 'sheerun/vim-polyglot'
@@ -44,3 +45,4 @@ use 'akinsho/flutter-tools.nvim'
 
 -- Null LS
 use 'jose-elias-alvarez/null-ls.nvim'
+

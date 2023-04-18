@@ -26,11 +26,11 @@ config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 
 -- Padding
 config.window_padding = {
-    left = 32,
-    right = 32,
-    top = 64,
+    left = 16,
+    right = 16,
+    top = 32,
     -- top = 16,
-    bottom = 16,
+    bottom = 8,
 }
 
 config.max_fps = 240
@@ -64,6 +64,13 @@ config.native_macos_fullscreen_mode = true
 
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
+
+config.keys = {
+    -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
+    { key = "LeftArrow",  mods = "OPT", action = wezterm.action { SendString = "\x1bb" } },
+    -- Make Option-Right equivalent to Alt-f; forward-word
+    { key = "RightArrow", mods = "OPT", action = wezterm.action { SendString = "\x1bf" } },
+}
 
 -- and finally, return the configuration to wezterm
 return config
