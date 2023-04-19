@@ -26,11 +26,11 @@ config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 
 -- Padding
 config.window_padding = {
-    left = 16,
-    right = 16,
-    top = 32,
+    left = 32,
+    right = 32,
+    top = 64,
     -- top = 16,
-    bottom = 8,
+    bottom = 16,
 }
 
 config.max_fps = 240
