@@ -22,7 +22,7 @@ end
 -- Tabs
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE|MACOS_FORCE_ENABLE_SHADOW'
 
 -- Padding
 config.window_padding = {
@@ -58,9 +58,19 @@ config.font_size = 14.0
 
 -- Background
 config.window_background_opacity = 0.85
-config.macos_window_background_blur = 26
+config.macos_window_background_blur = 32
 config.window_close_confirmation = 'NeverPrompt'
 config.native_macos_fullscreen_mode = true
+config.window_frame = {
+    border_left_width = '0.1cell',
+    border_right_width = '0.1cell',
+    border_bottom_height = '0.1cell',
+    border_top_height = '0.1cell',
+    border_left_color = '#333333',
+    border_right_color = '#333333',
+    border_bottom_color = '#333333',
+    border_top_color = '#333333',
+}
 
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
