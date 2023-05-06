@@ -1,5 +1,5 @@
 ### Brew
-brew install watchman ripgrep
+brew install watchman ripgrep jq
 
 ### PIP
 pip3 install neovim
