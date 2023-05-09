@@ -7,5 +7,5 @@ git:
     log:
         showWholeGraph: true
 os:
-  editCommand: 'nvim'
-  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+  edit: 'nvim'
+  editAtLine: '{{editor}} +{{line}} -- {{filename}}'
