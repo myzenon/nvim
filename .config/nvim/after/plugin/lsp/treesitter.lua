@@ -2,15 +2,16 @@ local status, treesitter = pcall(require, 'nvim-treesitter.configs')
 if (not status) then return end
 
 treesitter.setup {
-    -- highlight = {
-        -- enable = true,
-        -- disable = {},
-    -- },
-    -- indent = {
-        -- enable = true,
-        -- disable = {},
-    -- },
+    highlight = {
+        enable = true,
+        disable = {},
+    },
+    indent = {
+        enable = true,
+        disable = {},
+    },
     ensure_installed = {
+        'astro',
         'tsx',
         'toml',
         'php',
@@ -21,6 +22,8 @@ treesitter.setup {
         'lua',
         'typescript',
         'vue',
+        'markdown',
+        'markdown_inline',
     },
     autotag = {
         enable = true,
@@ -36,3 +39,4 @@ parser_config.tsx.filetype_to_parsername = {
     'javascriptreact',
     'javascript.jsx',
 }
+parser_config.astro = 'tsx'

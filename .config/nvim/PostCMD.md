@@ -1,8 +1,7 @@
 ### Brew
-brew install watchman ripgrep jq
-
-### PIP
-pip3 install neovim
+brew install watchman ripgrep jq fd
+### Github
+brew install gh
 
 ### Git
 ```
@@ -16,3 +15,13 @@ export GPG_TTY=$(tty)
 
 ## Rust Graph
 brew install graphviz
+
+## neovim on platrom
+### PIP
+pip3 install neovim
+
+### Ruby
+gem install neovim
+
+### Node.js
+yarn global add neovim

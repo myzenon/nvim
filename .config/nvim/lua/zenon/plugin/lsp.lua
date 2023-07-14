@@ -44,5 +44,4 @@ use 'dart-lang/dart-vim-plugin'
 use 'akinsho/flutter-tools.nvim'
 
 -- Null LS
-use 'jose-elias-alvarez/null-ls.nvim'
-
+-- use 'jose-elias-alvarez/null-ls.nvim'
