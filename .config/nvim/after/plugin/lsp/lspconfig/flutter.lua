@@ -9,13 +9,13 @@ local capabilities = require('zenon.lsp.capabilities')
 local set_key_map = function()
     keymap.set('n', '<leader>fs', ':FlutterRun<CR>')
     keymap.set('n', '<leader>fe', ':FlutterEmulators<CR>')
-    keymap.set('n', '<leader>flc', ':FlutterLogClear<CR>')
+    keymap.set('n', '<leader>fc', ':FlutterLogClear<CR>')
     keymap.set('n', '<leader>fo', ':FlutterOutlineToggle<CR>')
     keymap.set('n', '<leader>fq', ':FlutterQuit<CR>')
     keymap.set('n', '<leader>fr', ':FlutterRestart<CR>')
     keymap.set('n', '<leader>fR', ':FlutterReload<CR>')
     keymap.set('n', '<leader>fd', ':FlutterVisualDebug<CR>')
-    keymap.set('n', '<leader>fc', ':lua require("telescope").extensions.flutter.commands()<CR>')
+    keymap.set('n', '<leader>fC', ':lua require("telescope").extensions.flutter.commands()<CR>')
 end
 
 local load_telescope_extension = function()
@@ -56,19 +56,19 @@ flutter_tools.setup {
         open_cmd = 'edit', -- command to use to open the log buffer
     },
     dev_tools = {
-        autostart = false, -- autostart devtools server if not detected
+        autostart = false,         -- autostart devtools server if not detected
         auto_open_browser = false, -- Automatically opens devtools in the browser
     },
     outline = {
         open_cmd = '30vnew', -- command to use to open the outline buffer
-        auto_open = false -- if true this will open the outline automatically when it is first populated
+        auto_open = false    -- if true this will open the outline automatically when it is first populated
     },
     lsp = {
-        color = { -- show the derived colours for dart variables
-            enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
-            background = true, -- highlight the background
-            foreground = true, -- highlight the foreground
-            virtual_text = true, -- show the highlight using virtual text
+        color = {                   -- show the derived colours for dart variables
+            enabled = true,         -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+            background = true,      -- highlight the background
+            foreground = true,      -- highlight the foreground
+            virtual_text = true,    -- show the highlight using virtual text
             virtual_text_str = '■', -- the virtual text character to highlight
         },
         on_attach = on_attach,
@@ -82,3 +82,4 @@ flutter_tools.setup {
         }
     }
 }
+
