@@ -3,7 +3,7 @@ if (not status) then return end
 
 local keymap = vim.keymap
 local on_attach_lsp = require('zenon.lsp.on_attach')
-local format_on_save = require('zenon.lsp.format_on_save')
+local format_on_save = require('zenon.lsp.format_on_save_vim')
 local capabilities = require('zenon.lsp.capabilities')
 
 local set_key_map = function()
@@ -82,4 +82,3 @@ flutter_tools.setup {
         }
     }
 }
-

@@ -50,7 +50,7 @@ vim.opt.pumblend = 5
 vim.opt.background = 'dark'
 
 vim.opt.foldenable = false
--- vim.opt.signcolumn = "true"
+vim.opt.signcolumn = "no"
 vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Undercurl
