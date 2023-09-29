@@ -4,6 +4,7 @@ brew install watchman ripgrep jq fd
 brew install gh
 
 ### Git
+brew install gpg2 gnupg pinentry-mac
 ```
 git config --global push.autoSetupRemote true
 git config --global commit.gpgsign true
