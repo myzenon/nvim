@@ -50,7 +50,7 @@ config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 -- }
 config.font = wezterm.font_with_fallback {
     'MesloLGS Nerd Font',
-    'PK Maehongson',
+    -- 'PK Maehongson',
     -- 'Sukhumvit Set',
 }
 -- ซ้ำซ้อน

@@ -14,6 +14,7 @@ lspconfig.setup {
         'dockerls',
         'diagnosticls',
         'html',
+        'lua_ls',
         'ruby_ls',
         'rust_analyzer',
         'stylelint_lsp',
