@@ -10,7 +10,7 @@ treesitter.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = {
+    sync_installed = {
         'astro',
         'tsx',
         'toml',
@@ -22,6 +22,7 @@ treesitter.setup {
         'lua',
         'typescript',
         'vue',
+        'dart',
         'markdown',
         'markdown_inline',
     },
