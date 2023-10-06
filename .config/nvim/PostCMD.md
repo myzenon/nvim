@@ -5,6 +5,7 @@ brew install gh
 
 ### Git
 brew install gpg2 gnupg pinentry-mac
+brew install git-delta
 ```
 git config --global push.autoSetupRemote true
 git config --global commit.gpgsign true
