@@ -30,7 +30,7 @@ use 'L3MON4D3/LuaSnip'
 
 -- Styling
 use 'onsails/lspkind.nvim'
-use 'glepnir/lspsaga.nvim'
+use 'nvimdev/lspsaga.nvim'
 use 'folke/lsp-colors.nvim'
 
 -- Rust
