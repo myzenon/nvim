@@ -27,3 +27,9 @@ gem install neovim
 
 ### Node.js
 yarn global add neovim
+
+
+
+### cmd
+brew install bat fzf exa
+set rtp+=/opt/homebrew/opt/fzf
