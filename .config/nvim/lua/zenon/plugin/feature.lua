@@ -37,3 +37,6 @@ use 'bkad/camelcasemotion'
 
 -- Mini
 use 'echasnovski/mini.nvim'
+
+-- Tmux
+use 'christoomey/vim-tmux-navigator'

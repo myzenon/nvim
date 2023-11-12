@@ -22,6 +22,10 @@ vim.g.VM_maps = {
     ['Add Cursor Up'] = '<leader>k',   -- new cursor up
 }
 
+-- Tmux Navigator
+-- Write all buffers before navigating from Vim to tmux pane
+vim.g.tmux_navigator_save_on_switch = 1
+
 -- Copilot
 -- vim.g.copilot_node_command = '/opt/homebrew/Cellar/node@16/16.18.1/bin/node'
 -- vim.g.copilot_no_tab_map = true
