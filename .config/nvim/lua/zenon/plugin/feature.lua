@@ -34,3 +34,6 @@ use 'zbirenbaum/copilot.lua'
 -- Move in word
 use 'kana/vim-smartword'
 use 'bkad/camelcasemotion'
+
+-- Mini
+use 'echasnovski/mini.nvim'
