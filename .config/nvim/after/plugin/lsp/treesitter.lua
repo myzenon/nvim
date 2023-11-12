@@ -8,7 +8,9 @@ treesitter.setup {
     },
     indent = {
         enable = true,
-        disable = {},
+        disable = {
+            'dart'
+        },
     },
     sync_installed = {
         'astro',
