@@ -1,20 +1,12 @@
 return {
   {
-    "echasnovski/mini.surround",
-    opts = {
-      mappings = {
-        add = "ys",
-        delete = "ds",
-        -- find = "gsf",
-        -- find_left = "gsF",
-        -- highlight = "gsh",
-        replace = "cs",
-        -- update_n_lines = "gsn",
-      },
-    },
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = true,
   },
   { "christoomey/vim-system-copy", lazy = false },
-  { "vim-scripts/ReplaceWithRegister", lazy = false },
+  { "inkarkat/vim-ReplaceWithRegister", lazy = false },
   { "matze/vim-move", lazy = true },
   {
     "mg979/vim-visual-multi",
