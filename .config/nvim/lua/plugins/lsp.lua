@@ -8,6 +8,7 @@ return {
       keys[#keys + 1] = { "<leader>ca", false }
       keys[#keys + 1] = { "<leader>cA", false }
       keys[#keys + 1] = { "<leader>cr", false }
+      keys[#keys + 1] = { "gr", false }
 
       -- add keymaps
       keys[#keys + 1] = { "ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
@@ -50,6 +51,11 @@ return {
         "E",
         vim.diagnostic.open_float,
         desc = "Open float diagnostic",
+      }
+      keys[#keys + 1] = {
+        "gR",
+        "<cmd>Telescope lsp_references<cr>",
+        desc = "References",
       }
     end,
   },
