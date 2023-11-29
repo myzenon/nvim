@@ -29,7 +29,7 @@ config.window_padding = {
 	top = 48,
 	-- top = 64,
 	-- top = 16,
-	bottom = 16,
+	bottom = 12,
 }
 
 config.max_fps = 240
