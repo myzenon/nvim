@@ -26,7 +26,8 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE|MACOS_FORCE_ENABLE_SHADOW
 config.window_padding = {
 	left = 32,
 	right = 32,
-	top = 64,
+	top = 48,
+	-- top = 64,
 	-- top = 16,
 	bottom = 16,
 }
