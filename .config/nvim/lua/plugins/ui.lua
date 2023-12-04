@@ -61,7 +61,10 @@ return {
 
       opts.views = {
         hover = {
-          position = "50%",
+          position = {
+            row = 2,
+            col = 0,
+          },
           border = {
             padding = { 0, 1 },
             style = "rounded",
