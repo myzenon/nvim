@@ -95,4 +95,7 @@ return {
       position = "right",
     },
   },
+  {
+    "gioele/vim-autoswap",
+  },
 }
