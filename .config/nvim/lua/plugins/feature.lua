@@ -98,4 +98,63 @@ return {
   {
     "gioele/vim-autoswap",
   },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      {
+        "<leader>q",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():append()
+          vim.notify("Appended current file to Harpoon", vim.log.levels.INFO, { title = "Harpoon" })
+        end,
+        desc = "Append current file to Harpoon",
+      },
+
+      {
+        ";h",
+        function()
+          local harpoon = require("harpoon")
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "Toggle Harpoon List",
+      },
+      {
+        "<leader>a",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(1)
+        end,
+        desc = "Select Harpoon 1",
+      },
+      {
+        "<leader>s",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(2)
+        end,
+        desc = "Select Harpoon 2",
+      },
+      {
+        "<leader>d",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(3)
+        end,
+        desc = "Select Harpoon 3",
+      },
+      {
+        "<leader>f",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(4)
+        end,
+        desc = "Select Harpoon 4",
+      },
+    },
+  },
 }
