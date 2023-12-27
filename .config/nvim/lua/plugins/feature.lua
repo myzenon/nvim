@@ -104,9 +104,15 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    opts = {
+      settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+      },
+    },
     keys = {
       {
-        "<leader>q",
+        "<A-q>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():append()
@@ -114,17 +120,42 @@ return {
         end,
         desc = "Append current file to Harpoon",
       },
-
       {
-        ";h",
+        "<A-a>",
         function()
           local harpoon = require("harpoon")
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
         desc = "Toggle Harpoon List",
       },
+      -- {
+      --   "<A-a>",
+      --   function()
+      --     local harpoon = require("harpoon")
+      --     local conf = require("telescope.config").values
+      --     local function toggle_telescope(harpoon_files)
+      --       local file_paths = {}
+      --       for _, item in ipairs(harpoon_files.items) do
+      --         table.insert(file_paths, item.value)
+      --       end
+      --
+      --       require("telescope.pickers")
+      --         .new({}, {
+      --           prompt_title = "Harpoon",
+      --           finder = require("telescope.finders").new_table({
+      --             results = file_paths,
+      --           }),
+      --           previewer = conf.file_previewer({}),
+      --           sorter = conf.generic_sorter({}),
+      --         })
+      --         :find()
+      --     end
+      --     toggle_telescope(harpoon:list())
+      --   end,
+      --   desc = "Toggle Harpoon List",
+      -- },
       {
-        "<leader>a",
+        "<A-w>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(1)
@@ -132,7 +163,7 @@ return {
         desc = "Select Harpoon 1",
       },
       {
-        "<leader>s",
+        "<A-e>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(2)
@@ -140,7 +171,7 @@ return {
         desc = "Select Harpoon 2",
       },
       {
-        "<leader>d",
+        "<A-s>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(3)
@@ -148,7 +179,7 @@ return {
         desc = "Select Harpoon 3",
       },
       {
-        "<leader>f",
+        "<A-d>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(4)
