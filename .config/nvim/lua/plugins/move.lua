@@ -42,4 +42,7 @@ return {
       },
     },
   },
+  {
+    "gcmt/wildfire.vim",
+  },
 }

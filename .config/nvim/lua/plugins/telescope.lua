@@ -6,6 +6,7 @@ return {
       build = "make",
     },
     "nvim-telescope/telescope-file-browser.nvim",
+    "ahmedkhalf/project.nvim",
   },
   keys = {
     { "<leader>fb", false },
@@ -115,6 +116,12 @@ return {
       desc = "Open File Browser with the path of the current buffer",
     },
     {
+      ";p",
+      function()
+        require("telescope").extensions.projects.projects({})
+      end,
+    },
+    {
       "<leader>gs",
       function()
         local builtin = require("telescope.builtin")
@@ -191,5 +198,6 @@ return {
     telescope.setup(opts)
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("file_browser")
+    require("telescope").load_extension("projects")
   end,
 }
