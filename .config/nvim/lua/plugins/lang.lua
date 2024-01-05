@@ -46,6 +46,11 @@ return {
         "sql",
       },
 
+      indent = {
+        enable = true,
+        disable = { "dart" },
+      },
+
       -- https://github.com/nvim-treesitter/playground#query-linter
       query_linter = {
         enable = true,

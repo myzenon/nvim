@@ -65,13 +65,6 @@ return {
     config = true,
   },
   {
-    "nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
-  {
     "akinsho/flutter-tools.nvim",
     lazy = false,
     dependencies = {
@@ -142,4 +135,26 @@ return {
       })
     end,
   },
+  -- {
+  --
+  --   "napmn/react-extract.nvim",
+  --   keys = {
+  --     {
+  --       "<leader>re",
+  --       function()
+  --         require("react-extract").extract_to_new_file()
+  --       end,
+  --       desc = "Extract JSX to component in a new file",
+  --       mode = "v",
+  --     },
+  --     {
+  --       "<leader>rc",
+  --       function()
+  --         require("react-extract").extract_to_current_file()
+  --       end,
+  --       desc = "Extract JSX to component in a current file",
+  --       mode = "v",
+  --     },
+  --   },
+  -- },
 }
