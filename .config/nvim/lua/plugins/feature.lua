@@ -50,22 +50,22 @@ return {
     opts = { snippet_engine = "luasnip" },
   },
   -- Refactoring tool
-  -- {
-  --   "ThePrimeagen/refactoring.nvim",
-  --   keys = {
-  --     {
-  --       "<leader>r",
-  --       function()
-  --         require("refactoring").select_refactor()
-  --       end,
-  --       mode = "v",
-  --       noremap = true,
-  --       silent = true,
-  --       expr = false,
-  --     },
-  --   },
-  --   opts = {},
-  -- },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    keys = {
+      {
+        "<leader>r",
+        function()
+          require("refactoring").select_refactor()
+        end,
+        mode = { "n", "v" },
+        noremap = true,
+        silent = true,
+        expr = false,
+      },
+    },
+    opts = {},
+  },
   {
     "monaqa/dial.nvim",
     -- stylua: ignore
@@ -89,7 +89,13 @@ return {
   },
   {
     "simrat39/symbols-outline.nvim",
-    keys = { { "<leader>ol", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    keys = {
+      {
+        "+=",
+        "<cmd>SymbolsOutline<cr>",
+        desc = "Symbols Outline",
+      },
+    },
     cmd = "SymbolsOutline",
     opts = {
       position = "right",
