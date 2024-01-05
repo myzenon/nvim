@@ -121,7 +121,7 @@ return {
         desc = "Append current file to Harpoon",
       },
       {
-        "<A-a>",
+        "<A-w>",
         function()
           local harpoon = require("harpoon")
           harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -155,7 +155,7 @@ return {
       --   desc = "Toggle Harpoon List",
       -- },
       {
-        "<A-w>",
+        "<A-1>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(1)
@@ -163,7 +163,7 @@ return {
         desc = "Select Harpoon 1",
       },
       {
-        "<A-e>",
+        "<A-2>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(2)
@@ -171,7 +171,7 @@ return {
         desc = "Select Harpoon 2",
       },
       {
-        "<A-s>",
+        "<A-3>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(3)
@@ -179,7 +179,7 @@ return {
         desc = "Select Harpoon 3",
       },
       {
-        "<A-d>",
+        "<A-4>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(4)
