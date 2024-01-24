@@ -42,12 +42,16 @@ return {
       },
     },
   },
+  -- Next target
   {
-    "sustech-data/wildfire.nvim",
-    event = "VeryLazy",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("wildfire").setup()
-    end,
+    "wellle/targets.vim",
   },
+  -- {
+  --   "sustech-data/wildfire.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   config = function()
+  --     require("wildfire").setup()
+  --   end,
+  -- },
 }
