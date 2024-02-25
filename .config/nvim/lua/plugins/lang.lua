@@ -17,6 +17,7 @@ return {
         "shfmt",
         "tailwindcss-language-server",
         "typescript-language-server",
+        "graphql-language-service-cli",
       })
     end,
   },
@@ -44,6 +45,7 @@ return {
         "markdown_inline",
         "scss",
         "sql",
+        "graphql",
       },
 
       indent = {

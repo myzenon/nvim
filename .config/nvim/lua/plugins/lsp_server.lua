@@ -43,6 +43,9 @@ return {
           },
         },
         html = {},
+        graphql = {
+          file_types = { "graphql", "typescriptreact", "javascriptreact", "typescript", "javascript" },
+        },
         yamlls = {
           settings = {
             yaml = {
