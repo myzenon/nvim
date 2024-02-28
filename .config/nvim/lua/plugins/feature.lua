@@ -161,7 +161,7 @@ return {
       --   desc = "Toggle Harpoon List",
       -- },
       {
-        "<C-1>",
+        "<C-q>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(1)
@@ -169,7 +169,7 @@ return {
         desc = "Select Harpoon 1",
       },
       {
-        "<C-2>",
+        "<C-w>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(2)
@@ -177,7 +177,7 @@ return {
         desc = "Select Harpoon 2",
       },
       {
-        "<C-3>",
+        "<C-e>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(3)
@@ -185,7 +185,7 @@ return {
         desc = "Select Harpoon 3",
       },
       {
-        "<C-4>",
+        "<C-r>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(4)
