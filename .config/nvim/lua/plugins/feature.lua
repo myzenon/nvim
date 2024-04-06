@@ -118,7 +118,7 @@ return {
     },
     keys = {
       {
-        "<C-c>",
+        "<C-x>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():append()
@@ -127,7 +127,7 @@ return {
         desc = "Append current file to Harpoon",
       },
       {
-        "<C-x>",
+        "<C-c>",
         function()
           local harpoon = require("harpoon")
           harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -185,7 +185,7 @@ return {
         desc = "Select Harpoon 3",
       },
       {
-        "<C-r>",
+        "<C-z>",
         function()
           local harpoon = require("harpoon")
           harpoon:list():select(4)
