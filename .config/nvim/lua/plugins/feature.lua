@@ -121,10 +121,10 @@ return {
         "<C-x>",
         function()
           local harpoon = require("harpoon")
-          harpoon:list():append()
-          vim.notify("Appended current file to Harpoon", vim.log.levels.INFO, { title = "Harpoon" })
+          harpoon:list():add()
+          vim.notify("Add current file to Harpoon", vim.log.levels.INFO, { title = "Harpoon" })
         end,
-        desc = "Append current file to Harpoon",
+        desc = "Add current file to Harpoon",
       },
       {
         "<C-c>",
