@@ -1,4 +1,4 @@
 return {
-  { "nanotech/jellybeans.vim", lazy = true },
+  { "mellow-theme/mellow.nvim", lazy = true },
   { "tribela/vim-transparent", lazy = false },
 }

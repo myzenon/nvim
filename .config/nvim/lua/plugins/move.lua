@@ -22,7 +22,7 @@ return {
     "easymotion/vim-easymotion",
     lazy = true,
     keys = {
-      { "f", "<Plug>(easymotion-sn)", desc = "Find text" },
+      { "/", "<Plug>(easymotion-sn)", desc = "Find text" },
       { "n", "<Plug>(easymotion-next)", desc = "Find next text" },
       { "N", "<Plug>(easymotion-prev)", desc = "Find previous text" },
     },
