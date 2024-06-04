@@ -15,3 +15,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.conceallevel = 0
   end,
 })
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  pattern = "*",
+  command = "lua vim.lsp.inlay_hint.enable(false)",
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  command = "lua vim.lsp.inlay_hint.enable(true)",
+})

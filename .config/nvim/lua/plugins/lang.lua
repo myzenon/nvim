@@ -10,7 +10,6 @@ return {
         "vue-language-server",
         "json-lsp",
         "dockerfile-language-server",
-        "rust-analyzer",
         "intelephense",
         "stylua",
         "shellcheck",
