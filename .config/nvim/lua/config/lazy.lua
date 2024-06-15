@@ -23,7 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- coding
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+    -- { import = "lazyvim.plugins.extras.coding.copilot" },
 
     -- editor
     { import = "lazyvim.plugins.extras.editor.mini-files" },
