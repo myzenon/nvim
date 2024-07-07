@@ -2,7 +2,7 @@ return {
   -- LSP keymaps
   {
     "neovim/nvim-lspconfig",
-    init = function()
+    opts = function(_, opts)
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- remove keymaps
       keys[#keys + 1] = { "<leader>ca", false }
@@ -57,20 +57,16 @@ return {
         "<cmd>Telescope lsp_references<cr>",
         desc = "References",
       }
+      opts.setup.eslint = function()
+        require("lazyvim.util").lsp.on_attach(function(client)
+          if client.name == "eslint" then
+            client.server_capabilities.documentFormattingProvider = true
+          elseif client.name == "tsserver" or client.name == "vtsls" or client.name == "volar" then
+            client.server_capabilities.documentFormattingProvider = false
+          end
+        end)
+      end
     end,
-    opts = {
-      setup = {
-        eslint = function()
-          require("lazyvim.util").lsp.on_attach(function(client)
-            if client.name == "eslint" then
-              client.server_capabilities.documentFormattingProvider = true
-            elseif client.name == "tsserver" or client.name == "vtsls" or client.name == "volar" then
-              client.server_capabilities.documentFormattingProvider = false
-            end
-          end)
-        end,
-      },
-    },
   },
   {
     "smjonas/inc-rename.nvim",
