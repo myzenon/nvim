@@ -16,12 +16,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
-  pattern = "*",
-  command = "lua vim.lsp.inlay_hint.enable(false)",
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  command = "lua vim.lsp.inlay_hint.enable(true)",
-})
+-- Auto Inlay Hints disable on insert
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--   pattern = "*",
+--   command = "lua vim.lsp.inlay_hint.enable(false)",
+-- })
+--
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   pattern = "*",
+--   command = "lua vim.lsp.inlay_hint.enable(true)",
+-- })
