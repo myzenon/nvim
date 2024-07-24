@@ -134,32 +134,6 @@ return {
         end,
         desc = "Toggle Harpoon List",
       },
-      -- {
-      --   "<A-a>",
-      --   function()
-      --     local harpoon = require("harpoon")
-      --     local conf = require("telescope.config").values
-      --     local function toggle_telescope(harpoon_files)
-      --       local file_paths = {}
-      --       for _, item in ipairs(harpoon_files.items) do
-      --         table.insert(file_paths, item.value)
-      --       end
-      --
-      --       require("telescope.pickers")
-      --         .new({}, {
-      --           prompt_title = "Harpoon",
-      --           finder = require("telescope.finders").new_table({
-      --             results = file_paths,
-      --           }),
-      --           previewer = conf.file_previewer({}),
-      --           sorter = conf.generic_sorter({}),
-      --         })
-      --         :find()
-      --     end
-      --     toggle_telescope(harpoon:list())
-      --   end,
-      --   desc = "Toggle Harpoon List",
-      -- },
       {
         "<C-q>",
         function()
@@ -210,5 +184,8 @@ return {
       require("live_server.util").install()
     end,
     cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+  },
+  {
+    "jamestthompson3/nvim-remote-containers",
   },
 }

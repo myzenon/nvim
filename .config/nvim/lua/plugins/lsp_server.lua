@@ -17,15 +17,15 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
           single_file_support = false,
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = vue_language_server_path,
-                languages = { "vue" },
-              },
-            },
-          },
+          -- init_options = {
+          --   plugins = {
+          --     {
+          --       name = "@vue/typescript-plugin",
+          --       location = vue_language_server_path,
+          --       languages = { "vue" },
+          --     },
+          --   },
+          -- },
           settings = {
             typescript = {
               inlayHints = {
@@ -51,7 +51,7 @@ return {
             },
           },
         },
-        volar = {},
+        -- volar = {},
         html = {},
         graphql = {
           file_types = { "graphql", "typescriptreact", "javascriptreact", "typescript", "javascript" },
@@ -129,29 +129,29 @@ return {
           },
         },
       },
-      setup = {
-        tsserver = function(_, opts)
-          local mason_registry = require("mason-registry")
-          local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-            .. "/node_modules/@vue/language-server"
-
-          require("lspconfig").tsserver.setup({
-            server = opts,
-
-            init_options = {
-              plugins = {
-                {
-                  name = "@vue/typescript-plugin",
-                  location = vue_language_server_path,
-                  languages = { "vue" },
-                },
-              },
-            },
-            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-          })
-          return true
-        end,
-      },
+      -- setup = {
+      --   tsserver = function(_, opts)
+      --     local mason_registry = require("mason-registry")
+      --     local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+      --       .. "/node_modules/@vue/language-server"
+      --
+      --     require("lspconfig").tsserver.setup({
+      --       server = opts,
+      --
+      --       init_options = {
+      --         plugins = {
+      --           {
+      --             name = "@vue/typescript-plugin",
+      --             location = vue_language_server_path,
+      --             languages = { "vue" },
+      --           },
+      --         },
+      --       },
+      --       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      --     })
+      --     return true
+      --   end,
+      -- },
     },
   },
 }

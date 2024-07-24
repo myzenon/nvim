@@ -18,21 +18,31 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.sql" },
     { import = "lazyvim.plugins.extras.lang.rust" },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.vue" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- coding
-    -- { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
 
     -- editor
     { import = "lazyvim.plugins.extras.editor.mini-files" },
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
+    { import = "lazyvim.plugins.extras.editor.overseer" },
 
     -- linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
 
     -- util
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.util.dot" },
+
+    -- ui
+    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 
     { import = "plugins" },
   },
