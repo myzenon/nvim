@@ -7,6 +7,10 @@ return {
     },
     "nvim-telescope/telescope-file-browser.nvim",
     "ahmedkhalf/project.nvim",
+    {
+      "polarmutex/git-worktree.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
   },
   keys = {
     { "<leader>fb", false },
@@ -122,6 +126,18 @@ return {
       end,
     },
     {
+      "<leader>gw",
+      function()
+        require("telescope").extensions.git_worktree.git_worktree()
+      end,
+    },
+    {
+      "<leader>gwc",
+      function()
+        require("telescope").extensions.git_worktree.create_git_worktree()
+      end,
+    },
+    {
       "<leader>gs",
       function()
         local builtin = require("telescope.builtin")
@@ -199,5 +215,6 @@ return {
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("file_browser")
     require("telescope").load_extension("projects")
+    require("telescope").load_extension("git_worktree")
   end,
 }
