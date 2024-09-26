@@ -8,16 +8,16 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-emoji",
-      {
-        "jdrupal-dev/css-vars.nvim",
-        opts = {},
-      },
+      -- "hrsh7th/cmp-emoji",
+      -- {
+      --   "jdrupal-dev/css-vars.nvim",
+      --   opts = {},
+      -- },
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-      table.insert(opts.sources, { name = "css_vars" })
+      -- table.insert(opts.sources, { name = "emoji" })
+      -- table.insert(opts.sources, { name = "css_vars" })
 
       local has_words_before = function()
         unpack = unpack or table.unpack

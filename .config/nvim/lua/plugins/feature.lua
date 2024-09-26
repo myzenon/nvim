@@ -185,7 +185,7 @@ return {
     end,
     cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
   },
-  {
-    "jamestthompson3/nvim-remote-containers",
-  },
+  -- {
+  --   "jamestthompson3/nvim-remote-containers",
+  -- },
 }

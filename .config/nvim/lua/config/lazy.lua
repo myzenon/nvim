@@ -30,7 +30,7 @@ require("lazy").setup({
 
     -- coding
     { import = "lazyvim.plugins.extras.coding.copilot-chat" },
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+    -- { import = "lazyvim.plugins.extras.coding.copilot" },
 
     -- editor
     { import = "lazyvim.plugins.extras.editor.mini-files" },
@@ -47,7 +47,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.util.dot" },
 
     -- ui
-    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 
     { import = "plugins" },
   },
