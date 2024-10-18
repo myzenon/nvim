@@ -3,25 +3,25 @@ return {
     "kamykn/spelunker.vim",
     lazy = false,
   },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept = "<C-a>",
-          accept_word = false,
-          accept_line = false,
-          next = "<C-]>",
-          prev = "<C-[>",
-          dismiss = "<C-s>",
-        },
-      },
-    },
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   build = ":Copilot auth",
+  --   opts = {
+  --     suggestion = {
+  --       enabled = true,
+  --       auto_trigger = true,
+  --       keymap = {
+  --         accept = "<C-a>",
+  --         accept_word = false,
+  --         accept_line = false,
+  --         next = "<C-]>",
+  --         prev = "<C-[>",
+  --         dismiss = "<C-s>",
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "echasnovski/mini.files",
     keys = {
