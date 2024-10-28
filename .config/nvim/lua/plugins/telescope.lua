@@ -138,7 +138,7 @@ return {
       end,
     },
     {
-      "<leader>gs",
+      ";g",
       function()
         local builtin = require("telescope.builtin")
         builtin.git_status()
