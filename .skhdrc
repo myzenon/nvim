@@ -158,7 +158,7 @@ alt - p : yabai -m window --toggle sticky --toggle pip
 alt - t : open -na "/Applications/kitty.app" --args --single-instance --directory /home/zenon
 
 # minimize window
-alt - m : yabai -m window --minimize
+alt - m : yabai -m window --minimize; yabai -m window --focus first;
 
 # yabai
 alt - y : yabai --start-service

@@ -31,10 +31,10 @@ yabai -m config \
     split_ratio 0.50 \
     split_type auto \
     auto_balance off \
-    top_padding 40 \
-    bottom_padding 40 \
-    left_padding 80 \
-    right_padding 80 \
+    top_padding 24 \
+    bottom_padding 24 \
+    left_padding 64 \
+    right_padding 64 \
     window_gap 06 \
     layout bsp \
     mouse_modifier alt \
