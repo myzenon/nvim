@@ -22,19 +22,6 @@ return {
   --     },
   --   },
   -- },
-  {
-    "echasnovski/mini.files",
-    keys = {
-      {
-        "ml",
-        function()
-          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-        end,
-        desc = "Open mini.files (directory of current file)",
-      },
-      { "<leader>fM", false },
-    },
-  },
   -- Create annotations with one keybind, and jump your cursor in the inserted annotation
   {
     "danymat/neogen",
@@ -48,23 +35,6 @@ return {
       },
     },
     opts = { snippet_engine = "luasnip" },
-  },
-  -- Refactoring tool
-  {
-    "ThePrimeagen/refactoring.nvim",
-    keys = {
-      {
-        "<leader>r",
-        function()
-          require("refactoring").select_refactor()
-        end,
-        mode = { "n", "v" },
-        noremap = true,
-        silent = true,
-        expr = false,
-      },
-    },
-    opts = {},
   },
   {
     "monaqa/dial.nvim",
@@ -116,65 +86,37 @@ return {
         sync_on_ui_close = true,
       },
     },
-    keys = {
-      {
-        "<space><space>",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():add()
-          vim.notify("Add current file to Harpoon", vim.log.levels.INFO, { title = "Harpoon" })
-        end,
-        desc = "Add current file to Harpoon",
-      },
-      {
-        "<space>h",
-        function()
-          local harpoon = require("harpoon")
-          harpoon.ui:toggle_quick_menu(harpoon:list())
-        end,
-        desc = "Toggle Harpoon List",
-      },
-      {
-        "<space>1",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():select(1)
-        end,
-        desc = "Select Harpoon 1",
-      },
-      {
-        "<space>2",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():select(2)
-        end,
-        desc = "Select Harpoon 2",
-      },
-      {
-        "<space>3",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():select(3)
-        end,
-        desc = "Select Harpoon 3",
-      },
-      {
-        "<space>4",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():select(4)
-        end,
-        desc = "Select Harpoon 4",
-      },
-      {
-        "<space>5",
-        function()
-          local harpoon = require("harpoon")
-          harpoon:list():select(5)
-        end,
-        desc = "Select Harpoon 5",
-      },
-    },
+    keys = function()
+      local keys = {
+        {
+          "<space><space>",
+          function()
+            local harpoon = require("harpoon")
+            harpoon:list():add()
+            vim.notify("Add current file to Harpoon", vim.log.levels.INFO, { title = "Harpoon" })
+          end,
+          desc = "Add current file to Harpoon",
+        },
+        {
+          "<space>q",
+          function()
+            local harpoon = require("harpoon")
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+          end,
+          desc = "Toggle Harpoon List",
+        },
+      }
+      for i = 1, 9 do
+        table.insert(keys, {
+          "<space>" .. i,
+          function()
+            require("harpoon"):list():select(i)
+          end,
+          desc = "Harpoon to File " .. i,
+        })
+      end
+      return keys
+    end,
   },
   {
     "ahmedkhalf/project.nvim",

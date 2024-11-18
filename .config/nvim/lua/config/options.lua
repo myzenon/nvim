@@ -58,3 +58,6 @@ opt.pumblend = 5
 
 -- TTY Fast
 vim.cmd([[ set ttyfast ]])
+
+-- Disable ESLint auto format
+vim.g.lazyvim_eslint_auto_format = false

@@ -18,6 +18,9 @@ require("lazy").setup({
       },
     },
 
+    -- code
+    -- { import = "lazyvim.plugins.extras.coding.blink" },
+
     -- lang
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -29,7 +32,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- editor
-    { import = "lazyvim.plugins.extras.editor.mini-files" },
+    -- { import = "lazyvim.plugins.extras.editor.mini-files" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.editor.refactoring" },
